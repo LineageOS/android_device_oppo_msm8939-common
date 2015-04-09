@@ -109,6 +109,9 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
+    # Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
     # For bridgemgr daemon to inform the USB driver of the correct transport
