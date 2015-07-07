@@ -64,6 +64,7 @@ struct chipInfo_t {
   uint32_t platform;
   uint32_t subtype;
   uint32_t revNum;
+  uint32_t oppoId;
   uint32_t dtb_size;
   char     *dtb_file;
   struct chipInfo_t *prev;
@@ -86,6 +87,7 @@ struct chipId_t {
 struct chipSt_t {
   uint32_t platform;
   uint32_t subtype;
+  uint32_t oppoId;
   struct chipSt_t *next;
   struct chipSt_t *t_next;
 };
@@ -214,7 +216,8 @@ int chip_add(struct chipInfo_t *c)
         if ((c->chipset == x->chipset) &&
             (c->platform == x->platform) &&
             (c->subtype == x->subtype) &&
-            (c->revNum == x->revNum)) {
+            (c->revNum == x->revNum) &&
+            (c->oppoId == x->oppoId)) {
             return RC_ERROR;  /* duplicate */
         }
         if (!x->next) {
@@ -411,7 +414,7 @@ struct chipInfo_t *getChipInfo(const char *filename, int *num, uint32_t msmversi
                     entryEndedST = 0;
                     for (;entryEndedST < 1;) {
                         entryValidST = 1;
-                        for (i = 0; i < 2; i++) {
+                        for (i = 0; i < 3; i++) {
                             tok = strtok_r(pos, " \t", &sptr);
                             pos = NULL;
                             if (tok != NULL) {
@@ -446,6 +449,7 @@ struct chipInfo_t *getChipInfo(const char *filename, int *num, uint32_t msmversi
 
                             tmp_st->platform = data_st[0];
                             tmp_st->subtype= data_st[1];
+                            tmp_st->oppoId = data_st[2];
                             count2++;
                         }
                     }
@@ -489,6 +493,7 @@ struct chipInfo_t *getChipInfo(const char *filename, int *num, uint32_t msmversi
             tmp->platform = cSt->platform;
             tmp->revNum   = cId->revNum;
             tmp->subtype  = cSt->subtype;
+            tmp->oppoId   = cSt->oppoId;
             tmp->dtb_size = 0;
             tmp->dtb_file = NULL;
             tmp->master   = chip;
@@ -688,12 +693,12 @@ int main(int argc, char **argv)
             continue;
         }
 
-        log_info("chipset: %u, rev: %u, platform: %u, subtype: %u\n",
-                 chip->chipset, chip->revNum, chip->platform, chip->subtype);
+        log_info("chipset: %u, rev: %u, platform: %u, subtype: %u, oppoId: %u\n",
+                 chip->chipset, chip->revNum, chip->platform, chip->subtype, chip->oppoId);
 
         for (t_chip = chip->t_next; t_chip; t_chip = t_chip->t_next) {
-            log_info("   additional chipset: %u, rev: %u, platform: %u, subtype: %u\n",
-                     t_chip->chipset, t_chip->revNum, t_chip->platform, t_chip->subtype);
+            log_info("   additional chipset: %u, rev: %u, platform: %u, subtype: %u, oppoId: %u\n",
+                     t_chip->chipset, t_chip->revNum, t_chip->platform, t_chip->subtype, t_chip->oppoId);
         }
 
         rc = chip_add(chip);
@@ -712,8 +717,8 @@ int main(int argc, char **argv)
         for (t_chip = chip->t_next; t_chip; t_chip = t_chip->t_next) {
             rc = chip_add(t_chip);
             if (rc != RC_SUCCESS) {
-                log_err("... duplicate info, skipped (chipset %u, rev: %u, platform: %u, subtype %u:\n",
-                     t_chip->chipset, t_chip->revNum, t_chip->platform, t_chip->subtype);
+                log_err("... duplicate info, skipped (chipset %u, rev: %u, platform: %u, subtype: %u, oppoId: %u\n",
+                     t_chip->chipset, t_chip->revNum, t_chip->platform, t_chip->subtype, t_chip->oppoId);
                 continue;
             }
             dtb_count++;
@@ -753,7 +758,7 @@ int main(int argc, char **argv)
 
     /* Calculate offset of first DTB block */
     dtb_offset = 12               + /* header */
-                 ((force_v2 ? 24 : 20) * dtb_count) + /* DTB table entries */
+                 ((force_v2 ? 28 : 20) * dtb_count) + /* DTB table entries */
                  4;                 /* end of table indicator */
     /* Round up to page size */
     padding = page_size - (dtb_offset % page_size);
@@ -765,6 +770,7 @@ int main(int argc, char **argv)
          platform
          subtype
          soc rev
+         oppo id
          dtb offset
          dtb size
      */
@@ -774,6 +780,7 @@ int main(int argc, char **argv)
         if (force_v2)
             wrote += write(out_fd, &chip->subtype, sizeof(uint32_t));
         wrote += write(out_fd, &chip->revNum, sizeof(uint32_t));
+        wrote += write(out_fd, &chip->oppoId, sizeof(uint32_t));
         if (chip->master->master_offset != 0) {
             wrote += write(out_fd, &chip->master->master_offset, sizeof(uint32_t));
         } else {
