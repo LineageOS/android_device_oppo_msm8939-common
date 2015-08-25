@@ -115,3 +115,7 @@ PRODUCT_BOOT_JARS += \
 # Power HAL
 PRODUCT_PACKAGES += \
     power.msm8916
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom
