@@ -150,4 +150,4 @@ PRODUCT_PACKAGES += \
     ueventd.qcom.rc
 
 # call the proprietary setup
-$(call inherit-product-if-exists, vendor/oppo/msm8974-common/msm8974-common-vendor.mk)
+$(call inherit-product-if-exists, vendor/oppo/msm8939-common/msm8939-common-vendor.mk)
