@@ -119,3 +119,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/oppo/msm8974-common/msm8974-common-vendor.mk)
