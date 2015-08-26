@@ -118,7 +118,20 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom
+    fstab.qcom \
+    init.oppo.init.rc \
+    init.oppo.rc \
+    init.oppo.usb.rc \
+    init.qcom.class_core.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.ssr.sh \
+    init.qcom.syspart_fixup.sh \
+    init.qcom.usb.sh \
+    init.qcom.wcnss3660.sh \
+    init.target.rc \
+    ueventd.qcom.rc
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/oppo/msm8974-common/msm8974-common-vendor.mk)

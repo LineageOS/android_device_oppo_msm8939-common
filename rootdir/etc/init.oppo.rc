@@ -1,0 +1,196 @@
+##################################################################################
+### VENDOR_EDIT, OPPO All rights reserved.
+### 
+### File: - init.oppo.rc
+### Author: jiangyg@PM
+### 
+### ------------------------------- Revision History: ----------------------------
+### <author>                        <data>       <version>   <desc>
+### ------------------------------------------------------------------------------
+### jiangyg@PM                     2013-10-21                Create this file
+##################################################################################
+
+#ifdef VENDOR_EDIT
+#Zhengpeng@OnLineRD.AirService.RIL, 2013/11/4, Add for create opponvitems dir
+on boot
+	mkdir /data/opponvitems  0771 radio radio
+#endif
+
+#ifdef VENDOR_EDIT
+#zhunn@OnLineRD.AirService.RIL, 2015/1/28, Add for cdma card cannot send sms in Yiwu
+	setprop persist.radio.force_on_dc true
+#endif
+#wangjw@OnLineRD.framework.oppo_debug, 2013/10/22, add for setting dump mode
+on property:persist.sys.dump=1
+	write /sys/module/msm_poweroff/parameters/download_mode  1
+	write /proc/otrace_on 7978
+	write /sys/bus/msm_subsys/devices/subsys0/restart_level system 
+	write /sys/bus/msm_subsys/devices/subsys1/restart_level system
+	write /sys/bus/msm_subsys/devices/subsys2/restart_level system
+	write /sys/bus/msm_subsys/devices/subsys3/restart_level system
+	
+on property:persist.sys.dump=0
+	write /sys/module/msm_poweroff/parameters/download_mode  0
+	write /proc/otrace_on 0
+	write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+	write /sys/bus/msm_subsys/devices/subsys1/restart_level related
+	write /sys/bus/msm_subsys/devices/subsys2/restart_level related
+	write /sys/bus/msm_subsys/devices/subsys3/restart_level related
+#endif
+#ifdef VENDOR_EDIT
+#Horn@Swdp.Android.Boot, 2015-04-25, for oppo sepolicy 
+on property:persist.sys.adbroot=1
+   setprop selinux.reload_policy 1
+#endif
+
+#ifdef VENDOR_EDIT
+#Lycan.Wang@Prd.BasicDrv, 2014-04-24 Add for S2 on-off cause the cap noise
+on property:sys.oppo.cpu_idle=true
+	write /sys/module/lpm_levels/system/cpu0/pc/idle_enabled 1
+	write /sys/module/lpm_levels/system/cpu0/standalone_pc/idle_enabled 1
+	write /sys/module/lpm_levels/system/cpu0/wfi/idle_enabled 1
+	write /sys/module/lpm_levels/system/performance/cpu0/pc/idle_enabled 1
+	write /sys/module/lpm_levels/system/performance/cpu0/standalone_pc/idle_enabled 1
+	write /sys/module/lpm_levels/system/performance/cpu0/wfi/idle_enabled 1
+	
+on property:sys.oppo.cpu_idle=false
+	write /sys/module/lpm_levels/system/cpu0/pc/idle_enabled 0
+	write /sys/module/lpm_levels/system/cpu0/standalone_pc/idle_enabled 0
+	write /sys/module/lpm_levels/system/cpu0/wfi/idle_enabled 0
+	write /sys/module/lpm_levels/system/performance/cpu0/pc/idle_enabled 0
+	write /sys/module/lpm_levels/system/performance/cpu0/standalone_pc/idle_enabled 0
+	write /sys/module/lpm_levels/system/performance/cpu0/wfi/idle_enabled 0
+#endif /* VENDOR_EDIT */ 
+
+#ifdef VENDOR_EDIT  
+#Jevons@OnlineRd.DeviceService.version, 2013/8/15 , add for property self-adaptive
+#ShaoQiang@EXP.SysFramework.Framework, 2015/07/03, Modify for full disk encryption need late_start
+service prop-self-adap /system/bin/sh /init.prop.self_adaptive.sh
+    #class main
+    class late_start
+    user root
+    oneshot
+#endif
+
+#ifdef VENDOR_EDIT
+#JianRong.Zheng@Swdp.Android.Power, 2014/07/21, Add for 
+service engineermode-sh /system/bin/sh /init.oppo.engineermode.sh
+    class late_start
+    user root
+    oneshot	    
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Lycan.Wang@Prd.BasicDrv, 2014-03-18 Add for memleak debug
+#service mem-monitor /system/bin/sh /mem_proc_slab.sh
+#    class main
+#    user root
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#hewei@Swdp. Android. boot&charge, 2014/08/05, modify for oppo startup & shutdown animation
+service bootanim /system/bin/bootanimation
+    class core
+    user root
+    group media graphics audio 
+    disabled
+    oneshot   
+service rbootanim /system/bin/bootanimation -r
+    class core
+    user root
+    group graphics audio media
+    disabled
+    oneshot
+#endif /* VENDOR_EDIT */
+
+#please add to init.oppo.rc
+#ifdef VENDOR_EDIT 
+#Horn@Swdp.Android.Boot_Charger  2014-7-30, Add for [oppo systme daemon]
+######
+service keydaemon /system/bin/keydaemon
+class core
+user root
+group system
+######
+#endif /* VENDOR_EDIT */
+#end
+#ifdef VENDOR_EDIT // tanggeliang@Swdp.Android.FrameworkUi, 2014/08/18, add provide a function to indentify the usage of the phone.
+service block-mode /system/bin/sh /init.oppo.block.sh
+    class core
+    user root
+    oneshot
+#endif /* VENDOR_EDIT */
+
+
+#ifdef VENDOR_EDIT
+#JianRong.Zheng@Swdp.Android.Power, 2014/10/14, Add for root detect
+service rootdetect-sh /system/bin/sh /init.oppo.rootdetect.sh
+    class main
+    user root
+    oneshot	    
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+# yonggao.jiang@MultiMedia  10/26/2014  ADD FOR POWER CONTROL
+service power-control /system/bin/sh /system/etc/init.oppo.qcom.power.sh &
+   class main
+   user root
+   group root 
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#Peirs@Swdp.Android.FrameworkUi, 2014/07/30, add provide a function to indentify the usage of the phone.
+#recommend set in the stage of "on post-fs"
+    chmod 0660 /dev/block/bootdevice/by-name/reserve4
+    chown root system /dev/block/bootdevice/by-name/reserve4
+    chmod 0660 /dev/block/mmcblk0p36
+    chown root system /dev/block/mmcblk0p36
+#endif
+
+#ifdef VENDOR_EDIT
+#Fuchun.Liao@Mobile.BSP.CHG 2015-02-13 add for otg_switch in 14043
+on property:persist.sys.oppo.otg_support=true
+	write /sys/class/power_supply/usb/otg_switch 1
+	
+on property:persist.sys.oppo.otg_support=false
+	write /sys/class/power_supply/usb/otg_switch 0
+#endif /* VENDOR_EDIT */
+
+#ifdef VENDOR_EDIT
+#JianRong.Zheng@Swdp.Android.Power, 2015/03/24, Add for 
+on property:sys.fastcharger=true
+	write /sys/class/power_supply/battery/charger_enable 1
+	
+on property:sys.fastcharger=false
+	write /sys/class/power_supply/battery/charger_enable 0                
+#endif
+
+#ifdef VENDOR_EDIT
+#yanbin@Swdp.Android.build&config, 2015/05/05, add for solved ¡°Cloud services -  Backup&recovery £¬failed¡± porting wangyalong¡®s code
+service datasync /system/bin/datasync
+       class main
+       socket datasync stream 0660 root sdcard_rw
+       user root
+       disabled
+on property:oppo.service.datasync.enable=1
+    start datasync
+
+on property:oppo.service.datasync.enable=0
+    stop datasync
+#endif
+
+# Siting.Mo@EXP.SysFramework.Framework 2015/05/04, Add for APSS log
+
+service dumpAPSS_begin /system/bin/sh /autochmod.sh "dumpAPSSlog_start"
+    class main
+    user root
+    disabled
+	  oneshot	
+
+service dumpAPSS_end /system/bin/sh /autochmod.sh "dumpAPSSlog_end"
+    class main
+    user root
+    disabled
+	  oneshot	
+	  
+#endif /* VENDOR_EDIT */
