@@ -30,6 +30,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     voice.record.conc.disabled=true \
     voice.voip.conc.disabled=true
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.deep_buffer.media=true
+
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
