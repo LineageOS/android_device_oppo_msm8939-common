@@ -130,7 +130,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.oppo.init.rc \
     init.oppo.rc \
     init.oppo.usb.rc \
     init.qcom.class_core.sh \
