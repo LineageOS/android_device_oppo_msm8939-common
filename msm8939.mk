@@ -17,6 +17,9 @@
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# System properties
+-include $(LOCAL_PATH)/system_prop.mk
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
@@ -41,9 +44,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Screen density
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=480
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
