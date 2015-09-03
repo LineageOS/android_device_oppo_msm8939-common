@@ -23,15 +23,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.telephony.ril_class=OppoRIL \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    rild.libargs=-d /dev/smd0 \
-    ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=8 \
+    ro.telephony.default_network=9 \
     persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.sib16_support=1
-    ro.ril.hsxpa=1 \
-    ro.ril.gprsclass=10
+    persist.radio.sib16_support=1 \
+    persist.radio.multisim.config=dsds
 
 # QC vendor extension
 PRODUCT_PROPERTY_OVERRIDES += \
