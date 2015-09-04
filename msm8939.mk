@@ -200,7 +200,7 @@ PRODUCT_COPY_FILES += \
 
 # Sensor calibration configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/calmodule.cfg:system/etc/calmodule.cfg
+    $(LOCAL_PATH)/configs/calmodule.cfg:system/vendor/etc/calmodule.cfg
 
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/oppo/msm8939-common/msm8939-common-vendor.mk)
