@@ -18,6 +18,9 @@ BOARD_VENDOR := oppo
 
 COMMON_PATH := device/oppo/msm8939-common
 
+# inherit from Oppo common
+-include device/oppo/common/BoardConfigCommon.mk
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
@@ -69,6 +72,9 @@ endif
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
+# Assertions
+TARGET_BOARD_INFO_FILE ?= device/oppo/msm8939-common/board-info.txt
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
