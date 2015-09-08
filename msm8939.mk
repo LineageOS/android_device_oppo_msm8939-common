@@ -143,9 +143,9 @@ PRODUCT_PACKAGES += \
 
 # Qualcomm
 PRODUCT_PACKAGES += \
-    dsi_config \
-    netmgr_config \
-    qmi_config
+    dsi_config.xml \
+    netmgr_config.xml \
+    qmi_config.xml
 
 # Ramdisk
 PRODUCT_PACKAGES += \
