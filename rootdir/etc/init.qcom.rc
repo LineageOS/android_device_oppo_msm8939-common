@@ -335,9 +335,6 @@ on property:persist.sys.ssr.restart_level=*
 on property:sys.boot_completed=1
     write /dev/kmsg "Boot completed "
 
-on property:persist.radio.atfwd.start=false
-    stop atfwd
-
 service qcom-debug /system/bin/sh /system/etc/init.qcom.debug.sh
     class core
     user root
@@ -657,11 +654,6 @@ service config-zram /system/bin/sh /system/etc/init.qcom.zram.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
     start config-zram
-
-service atfwd /system/bin/ATFWD-daemon
-    class late_start
-    user system
-    group system radio
 
 service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     class late_start

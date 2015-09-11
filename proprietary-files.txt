@@ -1,6 +1,5 @@
 app/TimeService/TimeService.apk
 bin/adsprpcd
-bin/ATFWD-daemon
 bin/btnvtool
 bin/cnd
 bin/hci_qcomm_init
