@@ -293,6 +293,12 @@ on post-fs-data
     # Touchscreen
     chown system radio /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
+    chown system radio /proc/touchpanel/camera_enable
+    chmod 0660 /proc/touchpanel/camera_enable
+    chown system radio /proc/touchpanel/music_enable
+    chmod 0660 /proc/touchpanel/music_enable
+    chown system radio /proc/touchpanel/flashlight_enable
+    chmod 0660 /proc/touchpanel/flashlight_enable
 
     chown system system /sys/devices/virtual/graphics/fb0/cabc
     chmod 0660 /sys/devices/virtual/graphics/fb0/cabc
