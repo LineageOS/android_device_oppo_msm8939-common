@@ -2,7 +2,7 @@
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
 audio.offload.min.duration.secs=30
-av.offload.enable=true
+audio.offload.video=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=true
 persist.vendor.audio.fluence.speaker=false
