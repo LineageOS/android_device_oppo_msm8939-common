@@ -34,16 +34,10 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>10</item>
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>400</item>
-        <item>500</item>
-        <item>800</item>
-        <item>1000</item>
-        <item>1600</item>
-        <item>3000</item>
+        <item>380</item>
+        <item>1025</item>
+        <item>8300</item>
+        <item>10000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -51,36 +45,18 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>14</item>   <!-- 0-10 -->
-        <item>28</item>   <!-- 10-50 -->
-        <item>37</item>   <!-- 50-100 -->
-        <item>51</item>   <!-- 100-200 -->
-        <item>71</item>   <!-- 200-400 -->
-        <item>80</item>   <!-- 400-500 -->
-        <item>96</item>   <!-- 500-800 -->
-        <item>108</item>  <!-- 800-1000 -->
-        <item>144</item>  <!-- 1000-1600 -->
-        <item>181</item>  <!-- 1600-3000 -->
-        <item>255</item>  <!-- 3000+ -->
+        <item>4</item>   <!-- 0-380 -->
+        <item>26</item>   <!-- 380-1025 -->
+        <item>65</item>   <!-- 1025-8300 -->
+        <item>135</item>   <!-- 8300-10000 -->
+        <item>255</item>   <!-- 10000+ -->
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
          in the config_autoBrightnessLevels array.  This array should have size one greater
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>14</item>   <!-- 0-10 -->
-        <item>28</item>   <!-- 10-50 -->
-        <item>37</item>   <!-- 50-100 -->
-        <item>51</item>   <!-- 100-200 -->
-        <item>71</item>   <!-- 200-400 -->
-        <item>80</item>   <!-- 400-500 -->
-        <item>96</item>   <!-- 500-800 -->
-        <item>108</item>  <!-- 800-1000 -->
-        <item>144</item>  <!-- 1000-1600 -->
-        <item>181</item>  <!-- 1600-3000 -->
-        <item>255</item>  <!-- 3000+ -->
-    </integer-array>
+    <integer-array name="config_autoBrightnessButtonBacklightValues" />
 
     <!-- Minimum screen brightness setting allowed by the power manager.
          The user is forbidden from setting the brightness below this level. -->
@@ -92,12 +68,12 @@
 
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
-    <integer name="config_screenBrightnessSettingDefault">100</integer>
+    <integer name="config_screenBrightnessSettingDefault">52</integer>
 
     <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDim">20</integer>
+    <integer name="config_screenBrightnessDim">2</integer>
 
     <!-- Default color for notification LED. -->
     <color name="config_defaultNotificationColor">#ffffffff</color>
