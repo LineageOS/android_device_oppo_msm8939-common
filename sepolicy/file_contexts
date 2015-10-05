@@ -1,0 +1,15 @@
+# We have a couple of non-standard NV partitions
+/dev/block/bootdevice/by-name/oppodycnvbk                       u:object_r:modem_efs_partition_device:s0
+/dev/block/bootdevice/by-name/oppostanvbk                       u:object_r:modem_efs_partition_device:s0
+
+/data/cam_socket.*                                              u:object_r:camera_socket:s0
+
+/persist/.genmac                                                u:object_r:wifi_data_file:s0
+/persist/.bt_nv.bin                                             u:object_r:bluetooth_data_file:s0
+
+/sys/devices/soc.0/78b6000.i2c/i2c-0/0-0029/enable_ps_sensor	u:object_r:cam_sysfs:s0
+
+/dev/fpc1020                                                    u:object_r:fingerprint_device:s0
+/data/misc/fp(/.*)?                                             u:object_r:fingerprint_data:s0
+
+/data/opponvitems/(.*)?                                         u:object_r:nv_data_file:s0
