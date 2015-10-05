@@ -1,0 +1,5 @@
+type proc_touchpanel, fs_type;
+type cam_proc, fs_type;
+type cam_sysfs, fs_type;
+type fingerprint_data, fs_type;
+type fingerprint_sysfs, fs_type;
