@@ -2,9 +2,13 @@
 # System Properties for Oppo MSM8939
 #
 
+# Display
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608 \
     persist.hwc.mdpcomp.enable=true \
+    debug.composition.type=c2d \
+    debug.sf.gpu_comp_tiling=1 \
+    sys.hwc.gpu_perf_mode=1 \
     ro.sf.lcd_density=480
 
 PRODUCT_PROPERTY_OVERRIDES += \
