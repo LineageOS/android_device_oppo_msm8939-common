@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f287b81_8e69db8c",
+        "filename": "sepolicy/mm-qcamerad.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2015-10-05T20:25:34Z",
+      "side": 1,
+      "message": "Way too broad, should only cover the ones that are needed.",
+      "revId": "e9e1325560ce3dd431f485b072a9a76d9514e8ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f287b81_6e046fc7",
+        "filename": "sepolicy/mm-qcamerad.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 68
+      },
+      "writtenOn": "2015-10-05T20:25:34Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "e9e1325560ce3dd431f485b072a9a76d9514e8ed",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
