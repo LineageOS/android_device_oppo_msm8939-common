@@ -1,0 +1,4 @@
+allow mm-qcamerad input_device:chr_file { read ioctl open };
+allow mm-qcamerad persist_file:file { read open };
+allow mm-qcamerad cam_proc:file write;
+allow mm-qcamerad cam_sysfs:file write;
