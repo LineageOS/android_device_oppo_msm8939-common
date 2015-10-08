@@ -82,6 +82,7 @@ on post-fs-data
     mkdir /data/misc/sfs/sfs 0700 system system
     mkdir /data/misc/sfs/tz 0700 system system
     mkdir /data/misc/dts 0770 media audio
+    mkdir /data/misc/fp 0700 system system
 
 service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
     class late_start
