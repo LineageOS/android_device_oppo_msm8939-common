@@ -86,8 +86,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config
 
 # GPS
-PRODUCT_PACKAGES += \
-    gps.msm8916
+#PRODUCT_PACKAGES += \
+#    gps.msm8916
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
@@ -95,8 +95,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
 # Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
+#PRODUCT_PACKAGES += \
+#    charger_res_images
 
 # Display
 PRODUCT_PACKAGES += \
@@ -143,8 +143,8 @@ PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
 # Power HAL
-PRODUCT_PACKAGES += \
-    power.msm8916
+#PRODUCT_PACKAGES += \
+#    power.msm8916
 
 # Qualcomm
 PRODUCT_PACKAGES += \
@@ -187,9 +187,9 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny
 
-PRODUCT_PACKAGES += \
-    wcnss_service \
-    libwcnss_qmi
+#PRODUCT_PACKAGES += \
+#    wcnss_service \
+#    libwcnss_qmi
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
