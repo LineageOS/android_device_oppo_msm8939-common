@@ -162,9 +162,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.ssr.sh \
-    init.qcom.syspart_fixup.sh \
     init.qcom.usb.sh \
-    init.qcom.wcnss3660.sh \
     init.target.rc \
     ueventd.qcom.rc
 
