@@ -43,6 +43,7 @@ PRODUCT_COPY_FILES += \
 
 # System Properties
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=true \
     persist.sys.usb.config=mtp
 
 # Screen density
