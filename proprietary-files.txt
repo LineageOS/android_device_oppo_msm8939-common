@@ -51,9 +51,11 @@ etc/firmware/venus.b03
 etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
+etc/permissions/com.google.widevine.software.drm.xml
 etc/permissions/com.qualcomm.location.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
+framework/com.google.widevine.software.drm.jar
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
 lib64/hw/camera.msm8916.so
@@ -220,7 +222,6 @@ vendor/lib64/libCommandSvc.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdisp-aba.so
-vendor/lib64/libDivxDrm.so
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/libdpmctmgr.so
 vendor/lib64/libdpmfdmgr.so
@@ -333,7 +334,6 @@ vendor/lib64/libSecureUILib.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureuisvc_jni.so
 vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libSHIMDivxDrm.so
 vendor/lib64/libsmemlog.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
@@ -344,7 +344,6 @@ vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 -vendor/lib64/libtime_genoff.so
 vendor/lib64/libTimeService.so
-vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/libulp2.so
 vendor/lib64/libvcel.so
 vendor/lib64/libvendorconn.so
@@ -368,7 +367,6 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxt_native.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mmi_audio.so
 vendor/lib64/mmi_battery.so
 vendor/lib64/mmi_bt.so
@@ -393,8 +391,6 @@ vendor/lib64/mmi_touch.so
 vendor/lib64/mmi_vibrator.so
 vendor/lib64/mmi_volume.so
 vendor/lib64/mmi_wifi.so
-vendor/lib64/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib64/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/egl/eglsubAndroid.so
 vendor/lib/egl/libEGL_adreno.so
@@ -548,7 +544,6 @@ vendor/lib/libcne.so
 vendor/lib/libconfigdb.so
 vendor/lib/libdiag.so
 vendor/lib/libdisp-aba.so
-vendor/lib/libDivxDrm.so
 vendor/lib/lib-dplmedia.so
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
@@ -707,7 +702,6 @@ vendor/lib/libSecureUILib.so
 vendor/lib/libsecureui.so
 vendor/lib/libsecureuisvc_jni.so
 vendor/lib/libsecureui_svcsock.so
-vendor/lib/libSHIMDivxDrm.so
 vendor/lib/libsmemlog.so
 vendor/lib/libsrsprocessing.so
 vendor/lib/libssd.so
@@ -718,7 +712,6 @@ vendor/lib/libsystem_health_mon.so
 vendor/lib/libthermalclient.so
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
-vendor/lib/libtzdrmgenprov.so
 vendor/lib/libulp2.so
 vendor/lib/libvcel.so
 vendor/lib/libvendorconn.so
@@ -745,8 +738,6 @@ vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libxml.so
 vendor/lib/libxtadapter.so
 vendor/lib/libxt_native.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/mmi_audio.so
 vendor/lib/mmi_battery.so
 vendor/lib/mmi_bt.so
@@ -771,11 +762,6 @@ vendor/lib/mmi_touch.so
 vendor/lib/mmi_vibrator.so
 vendor/lib/mmi_volume.so
 vendor/lib/mmi_wifi.so
-vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
-vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
