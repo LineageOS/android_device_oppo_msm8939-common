@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
     init.qcom.early_boot.sh \
     init.qcom.rc \
     init.qcom.sh \
+    init.qcom.power.rc \
     init.qcom.ssr.sh \
     init.qcom.usb.sh \
     init.target.rc \
