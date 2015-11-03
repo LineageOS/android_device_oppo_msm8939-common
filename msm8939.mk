@@ -172,6 +172,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libxml2
 
+# Adreno driver dependencies
+PRODUCT_PACKAGES += \
+    libboringssl-compat \
+    libstlport
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
