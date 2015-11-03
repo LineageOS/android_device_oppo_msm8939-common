@@ -36,6 +36,9 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
+    # Preload the BoringSSL wrapper
+    export LD_PRELOAD "libboringssl-compat.so"
+
 on fs
     mount_all fstab.qcom
 
