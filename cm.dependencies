@@ -12,6 +12,10 @@
     "target_path": "external/mm-dash"
   },
   {
+    "repository": "android_external_stlport",
+    "target_path": "external/stlport"
+  },
+  {
     "repository": "android_kernel_oppo_msm8939",
     "target_path": "kernel/oppo/msm8939"
   }
