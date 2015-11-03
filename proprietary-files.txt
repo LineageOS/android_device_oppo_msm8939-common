@@ -81,10 +81,12 @@ vendor/bin/audioflacapp
 vendor/bin/slim_ap_daemon
 vendor/bin/sound_trigger_test
 vendor/lib64/egl/eglsubAndroid.so
+vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
 vendor/lib64/egl/libGLESv2_adreno.so
 vendor/lib64/egl/libq3dtools_adreno.so
+vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libacdb-fts.so
 vendor/lib64/libacdbloader.so
@@ -117,6 +119,8 @@ vendor/lib64/libbtnv.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30-a3xx.so
 vendor/lib64/libc2d30-a4xx.so
+vendor/lib64/libc2d30-a5xx.so
+vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libcalmodule_gyroscope.so
 vendor/lib64/libcalmodule_memsic.so
 vendor/lib64/libcalmodule_yamaha.so
@@ -260,6 +264,7 @@ vendor/lib64/libizat_core.so
 vendor/lib64/liblbs_core.so
 vendor/lib64/liblistenjni.so
 vendor/lib64/liblistensoundmodel2.so
+vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/liblocationservice.so
 vendor/lib64/libloc_ext.so
@@ -399,10 +404,12 @@ vendor/lib64/mmi_volume.so
 vendor/lib64/mmi_wifi.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/egl/eglsubAndroid.so
+vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
 vendor/lib/egl/libGLESv2_adreno.so
 vendor/lib/egl/libq3dtools_adreno.so
+vendor/lib/egl/libQTapGLES.so
 vendor/lib/hw/flp.default.so
 vendor/lib/hw/sound_trigger.primary.msm8916.so
 vendor/lib/libacdb-fts.so
@@ -442,6 +449,8 @@ vendor/lib/libbtnv.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a3xx.so
 vendor/lib/libc2d30-a4xx.so
+vendor/lib/libc2d30-a5xx.so
+vendor/lib/libc2d30_bltlib.so
 vendor/lib/libcalmodule_gyroscope.so
 vendor/lib/libcalmodule_yamaha.so
 vendor/lib/libCB.so
@@ -593,6 +602,7 @@ vendor/lib/libjpegehw.so
 vendor/lib/liblbs_core.so
 vendor/lib/liblistenjni.so
 vendor/lib/liblistensoundmodel2.so
+vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/liblocationservice.so
 vendor/lib/libloc_ext.so
