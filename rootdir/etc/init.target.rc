@@ -57,6 +57,9 @@ on init
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
 
+    # Preload the BoringSSL wrapper
+    export LD_PRELOAD "libboringssl-compat.so"
+
 on fs
     mount_all fstab.qcom
 
