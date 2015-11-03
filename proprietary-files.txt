@@ -65,6 +65,7 @@ lib64/hw/sensors.hal.tof.so
 -lib64/libloc_api_v02.so
 -lib64/libloc_ds_api.so
 lib64/librmnetctl.so
+lib64/libstlport.so
 lib/hw/camera.msm8916.so
 lib/hw/sensors.msm8916.so
 -lib/libloc_api_v02.so
@@ -74,6 +75,7 @@ lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so
 lib/libqomx_core.so
 lib/librmnetctl.so
+lib/libstlport.so
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/audioflacapp
 vendor/bin/slim_ap_daemon
