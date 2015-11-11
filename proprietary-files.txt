@@ -62,13 +62,11 @@ framework/com.google.widevine.software.drm.jar
 lib64/hw/camera.msm8916.so
 lib64/hw/sensors.msm8916.so
 lib64/hw/sensors.hal.tof.so
-lib64/libcnefeatureconfig.so
 -lib64/libloc_api_v02.so
 -lib64/libloc_ds_api.so
 lib64/librmnetctl.so
 lib/hw/camera.msm8916.so
 lib/hw/sensors.msm8916.so
-lib/libcnefeatureconfig.so
 -lib/libloc_api_v02.so
 -lib/libloc_ds_api.so
 lib/libmmcamera_interface.so
