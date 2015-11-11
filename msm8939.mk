@@ -160,7 +160,7 @@ PRODUCT_PACKAGES += \
     init.oppo.usb.rc \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
-    init.qcom.rc \
+    init.qcom-common.rc \
     init.qcom.sh \
     init.qcom.power.rc \
     init.qcom.ssr.sh \
