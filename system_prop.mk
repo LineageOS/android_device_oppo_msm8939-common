@@ -34,6 +34,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.default_network=9 \
+    ro.telephony.ril.config=simactivation \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
     persist.radio.multisim.config=dsds
