@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff82abbf_e21dfbbd",
+        "filename": "cm.dependencies",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-11-26T18:36:11Z",
+      "side": 1,
+      "message": "I am inclined to rather ship libstlport as a blob (taken either from stock or cm-12.1) in order to please the DRM blobs.",
+      "revId": "4a47ab823e356c94139b1098a3216e7268fca1c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ff82abbf_8278aff8",
+        "filename": "rootdir/etc/init.target.rc",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2015-11-26T18:36:11Z",
+      "side": 1,
+      "message": "We should probably rather shim this.",
+      "revId": "4a47ab823e356c94139b1098a3216e7268fca1c5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
