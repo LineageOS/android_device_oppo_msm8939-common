@@ -96,6 +96,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
 
+# Camera
+PRODUCT_PACKAGES += \
+    libshim_camera
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
