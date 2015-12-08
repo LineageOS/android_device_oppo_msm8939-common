@@ -36,7 +36,7 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
-    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so"
+    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so:/system/vendor/lib64/libdpmframework.so|libshim_parcel.so:/system/vendor/lib64/libcne.so|libshim_parcel.so"
 
 on fs
     mount_all fstab.qcom
