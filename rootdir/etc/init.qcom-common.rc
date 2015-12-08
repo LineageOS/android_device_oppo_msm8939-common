@@ -26,7 +26,6 @@
 #
 
 import init.oppo.usb.rc
-import init.oppo.rc
 import init.target.rc
 
 on early-init
@@ -65,25 +64,6 @@ on boot
     chown system system /dev/stmvl6180_ranging
     chmod 0644 /persist/LaserFocusOffset.txt
     chmod 0644 /persist/LaserFocusCrossTalk.txt
-
-    # Add for wifi ftm
-    chown system system /system/bin/wifi_ftm
-    chmod 0777  /system/bin/wifi_ftm
-    chown system system /system/bin/wifi_single
-    chmod 0777  /system/bin/wifi_single
-    chown system system /system/bin/iwpriv
-    chmod 0777  /system/bin/iwpriv
-    chown system system /system/bin/iwlist
-    chmod 0777  /system/bin/iwlist
-    chown system system /system/bin/tcpdump
-    chmod 0777  /system/bin/tcpdump
-    chown system system /sys/bus/platform/devices/a000000.qcom,wcnss-wlan/wcnss_build_version
-    chown system system /sys/bus/platform/devices/a000000.qcom,wcnss-wlan/wcnss_chip_type
-    chmod 0660 /dev/ttyHS2
-    chown bluetooth bluetooth /dev/ttyHS2
-
-    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/device/extldo
-    chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
     # Create QMUX deamon socket area
     mkdir /dev/socket/qmux_radio 0770 radio radio
@@ -275,6 +255,8 @@ on post-fs-data
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
 
+    mkdir /data/opponvitems  0771 radio radio
+
     chown system system /sys/oppo_ftm/als_prox/name
     chown system system /sys/oppo_ftm/als_prox/ps_enable
     chown system system /sys/oppo_ftm/als_prox/prox_raw
@@ -375,19 +357,6 @@ on property:bluetooth.dun.status=running
 on property:bluetooth.dun.status=stopped
     stop bt-dun
 
-on property:ro.bluetooth.ftm_enabled=true
-    start ftmd
-
-service qcom-c_core-sh /system/bin/sh /init.qcom.class_core.sh
-    class core
-    user root
-    oneshot
-
-service qcom-c_main-sh /system/bin/sh /init.class_main.sh
-    class main
-    user root
-    oneshot
-
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start config_bluetooth
@@ -455,13 +424,6 @@ service bt-sap /system/bin/sapd 15
     user bluetooth
     group bluetooth net_bt_admin
     class late_start
-    disabled
-    oneshot
-
-service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
-    class late_start
-    user root
-    group bluetooth net_bt_admin misc net_bt_stack qcom_diag
     disabled
     oneshot
 
@@ -561,12 +523,6 @@ service ptt_ffbm /system/bin/ptt_socket_app -f -d
     disabled
     oneshot
 
-service ftm_ffbm /system/bin/ftmdaemon
-    user root
-    group root
-    disabled
-    oneshot
-
 service cnss-daemon /system/bin/cnss-daemon -n -l
     class late_start
 
@@ -615,17 +571,6 @@ service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
 on property:crypto.driver.load=1
     insmod /system/lib/modules/qce.ko
     insmod /system/lib/modules/qcedev.ko
-
-service qcom-sh /system/bin/sh /init.qcom.sh
-    class late_start
-    user root
-    oneshot
-
-service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
-    class late_start
-    user root
-    disabled
-    oneshot
 
 service wifi-sdio-on /system/bin/sh /system/etc/init.qcom.sdio.sh
     class late_start
@@ -678,136 +623,6 @@ service ril-daemon2 /system/bin/rild -c 2
     socket rild-debug2 stream 660 radio system
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
-
-service ril-daemon3 /system/bin/rild -c 3
-    class main
-    socket rild3 stream 660 root radio
-    socket rild-debug3 stream 660 radio system
-    user root
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
-
-service usb_uicc_enable /system/bin/sh /system/etc/init.qcom.uicc.sh
-    class late_start
-    user root
-    disabled
-    oneshot
-
-service usb_uicc_daemon /system/bin/usb_uicc_client
-    class main
-    user system
-    group system log net_raw
-    oneshot
-
-on property:sys.usb_uicc.enabled=1
-    start usb_uicc_enable
-
-on property:sys.usb_uicc.enabled=0
-    start usb_uicc_enable
-
-service wifiserver /system/bin/sh /system/etc/init.qcom.wifi.sh
-    class core
-    user root
-    oneshot
-
-service wififtmserver /system/bin/sh system/bin/wifi_ftm
-    class late_start
-    user root
-    group root
-    disabled
-
-on property:WFtmUp=1
-    start wififtmserver
-
-service wifiAtserver /system/bin/sh system/bin/wifi_at
-    class late_start
-    user root
-    group root
-    disabled
-
-on property:WAtUp=1
-    start wifiAtserver
-
-service wifisingle /system/bin/sh system/bin/wifi_single
-    class late_start
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:oppo.WifiSgle=1
-    start wifisingle
-
-service wifirftest /system/bin/sh system/bin/wifi_rf_test
-    class late_start
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:oppo.wifirftest=1
-    start wifirftest
-
-service hcidump /system/bin/sh /system/etc/hcidump.sh
-    user bluetooth
-    group bluetooth system net_bt_admin net_admin
-    disabled
-    oneshot
-
-service ssr_diag /system/bin/ssr_diag
-    class late_start
-    user system
-    group system
-    disabled
-
-    # Define fastmmi
-service fastmmi /system/bin/mmi
-    user root
-    group root
-    disabled
-
-service fastmmisrv /system/bin/sh /init.qcom.factory.sh
-    user root
-    disabled
-    oneshot
-
-on mmi
-    start fastmmisrv
-
-on ffbm
-    trigger early-fs
-    trigger fs
-    trigger post-fs
-    trigger post-fs-data
-
-    # Load properties from /system/ + /factory after fs mount. Place
-    # this in another action so that the load will be scheduled after the prior
-    # issued fs triggers have completed.
-    trigger load_all_props_action
-
-    trigger early-boot
-    trigger mmi
-
-service qbcharger /charger -m 1
-    disabled
-    oneshot
-
-on property:sys.qbcharger.enable=true
-    start qbcharger
-
-on property:sys.qbcharger.enable=false
-    stop qbcharger
-
-service bms-sh /system/bin/sh /init.qcom.bms.sh
-    class main
-    user root
-    oneshot
-
-service vm_bms /system/bin/vm_bms
-    user root
-    group root
-    disabled
-
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root

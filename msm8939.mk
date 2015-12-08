@@ -164,13 +164,8 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.oppo.rc \
     init.oppo.usb.rc \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
     init.qcom-common.rc \
-    init.qcom.sh \
     init.qcom.power.rc \
-    init.qcom.ssr.sh \
-    init.qcom.usb.sh \
     init.target.rc \
     ueventd.qcom.rc
 
