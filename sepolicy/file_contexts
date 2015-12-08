@@ -16,3 +16,6 @@
 /data/misc/fp(/.*)?                                             u:object_r:fingerprint_data:s0
 
 /data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0
+
+# Thermal
+/system/bin/thermal-engine                          		u:object_r:thermal-engine_exec:s0
