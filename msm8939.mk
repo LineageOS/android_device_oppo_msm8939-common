@@ -177,6 +177,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
+    libshim_parcel \
     libxml2
 
 # Adreno driver dependencies
