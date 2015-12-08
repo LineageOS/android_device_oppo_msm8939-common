@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f96bb07_9ee57d3b",
+        "filename": "rootdir/etc/init.oppo.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-12-08T21:58:29Z",
+      "side": 0,
+      "message": "This should be removed in the next commit",
+      "revId": "4165172f677f397bf1395b6cfa22d9c5997783c9",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
