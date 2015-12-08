@@ -22,7 +22,6 @@ bin/qseecomd
 bin/rfs_access
 bin/rmt_storage
 bin/sensor_work
-bin/thermal-engine
 bin/time_daemon
 bin/usb_uicc_client
 etc/firmware/a225p5_pm4.fw
@@ -78,6 +77,7 @@ lib/librmnetctl.so
 vendor/bin/audioflacapp
 vendor/bin/slim_ap_daemon
 vendor/bin/sound_trigger_test
+vendor/bin/thermal-engine
 vendor/lib64/egl/eglsubAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
