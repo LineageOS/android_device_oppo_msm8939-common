@@ -185,6 +185,10 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libstlport
 
+# Widevine dependency
+PRODUCT_PACKAGES += \
+    libshim_widevine
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
