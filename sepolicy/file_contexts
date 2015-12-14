@@ -12,4 +12,11 @@
 
 /sys/devices/soc.0/78b6000.i2c/i2c-0/0-0029/enable_ps_sensor	u:object_r:cam_sysfs:s0
 
+/sys/oppo_ftm/als_prox/algo_info				u:object_r:sensor_calib_file:s0
+/sys/oppo_ftm/als_prox/calibration				u:object_r:sensor_calib_file:s0
+/sys/oppo_ftm/accel/cali					u:object_r:sensor_calib_file:s0
+
 /data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0
+
+/system/bin/sensor_work						u:object_r:sensor_init_exec:s0
+/system/bin/psensord						u:object_r:sensor_init_exec:s0
