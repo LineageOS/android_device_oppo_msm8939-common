@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f9dbf25_81c0be52",
+        "filename": "overlay/frameworks/base/core/res/res/values/config.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-12-14T23:27:58Z",
+      "side": 1,
+      "message": "Should work with just GSM | WCDMA | LTE",
+      "range": {
+        "startLine": 265,
+        "startChar": 46,
+        "endLine": 265,
+        "endChar": 113
+      },
+      "revId": "3eb26965539742fa30af46c6b5d29c4d51209d68",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
