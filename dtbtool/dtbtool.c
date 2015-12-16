@@ -705,13 +705,13 @@ uint32_t GetVersionInfo(const char *filename)
     } else {
         /* Find the type of version */
         while ((llen = getline(&line, &line_size, pfile)) != -1) {
-           if ((pos = strstr(line,QCDT_BOARD_TAG)) != NULL) {
+            if ((pos = strstr(line,QCDT_BOARD_TAG)) != NULL) {
                 v = 2;
-           }
-           if ((pos = strstr(line,QCDT_PMIC_TAG)) != NULL) {
+            }
+            if ((pos = strstr(line,QCDT_PMIC_TAG)) != NULL) {
                 v = 3;
                 break;
-           }
+            }
         }
     }
 
