@@ -27,6 +27,7 @@
 
 import init.oppo.usb.rc
 import init.target.rc
+import init.qcom.power.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
