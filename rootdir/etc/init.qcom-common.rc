@@ -26,6 +26,7 @@
 #
 
 import init.oppo.usb.rc
+import init.qcom.power.rc
 import init.target.rc
 
 on early-init
