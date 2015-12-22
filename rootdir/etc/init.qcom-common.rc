@@ -449,6 +449,7 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
+    group radio system
 
 service qti /system/vendor/bin/qti
     class main
