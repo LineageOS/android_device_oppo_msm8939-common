@@ -589,11 +589,13 @@ service ril-daemon2 /system/bin/rild -c 2
     socket rild-debug2 stream 660 radio system
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw diag qcom_diag log
+
 service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 service wfdservice /system/bin/wfdservice
     class main
