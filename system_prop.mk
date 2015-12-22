@@ -33,12 +33,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=9 \
     ro.telephony.ril.config=simactivation \
     persist.radio.force_on_dc=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
     persist.radio.multisim.config=dsds
+
+# WIFI
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0
 
 # QC vendor extension
 PRODUCT_PROPERTY_OVERRIDES += \
