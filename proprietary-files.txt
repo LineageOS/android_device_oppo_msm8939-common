@@ -15,7 +15,7 @@ bin/loc_launcher
 bin/mm-pp-daemon
 bin/mm-qcamera-daemon
 bin/netmgrd
-bin/perfd
+bin/perfd:vendor/bin/perfd
 bin/psensord
 bin/qmuxd
 bin/qseecomd
