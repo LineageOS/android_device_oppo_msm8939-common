@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f7f9b97_227a0324",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-12-27T03:17:40Z",
+      "side": 1,
+      "message": "This can be built from source",
+      "range": {
+        "startLine": 282,
+        "startChar": 11,
+        "endLine": 282,
+        "endChar": 24
+      },
+      "revId": "df54cb927780176ed24bc2364eb89c6188a919ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7f7f9b97_c276af3f",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2015-12-27T03:17:40Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 284,
+        "startChar": 11,
+        "endLine": 284,
+        "endChar": 27
+      },
+      "revId": "df54cb927780176ed24bc2364eb89c6188a919ca",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
