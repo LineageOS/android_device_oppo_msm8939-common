@@ -12,7 +12,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=c2d \
     debug.sf.gpu_comp_tiling=1 \
     sys.hwc.gpu_perf_mode=1 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=360
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.ssr=false \
