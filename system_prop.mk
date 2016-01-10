@@ -21,14 +21,20 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false \
     tunnel.audio.encode=false \
-    audio.offload.buffer.size.kb=64 \
-    audio.offload.min.duration.secs=30 \
-    av.offload.enable=true \
     use.voice.path.for.pcm.voip=true \
-    audio.offload.gapless.enabled=true \
     voice.playback.conc.disabled=true \
     voice.record.conc.disabled=true \
     voice.voip.conc.disabled=true
+
+# Audio offload
+PRODUCT_PROPERTY_OVERRIDES += \
+    av.offload.enable=true \
+    av.streaming.offload.enable=true \
+    audio.offload.buffer.size.kb=64 \
+    audio.offload.min.duration.secs=30 \
+    audio.offload.gapless.enabled=true \
+    audio.offload.pcm.16bit.enable=true \
+    audio.offload.pcm.24bit.enable=true
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
