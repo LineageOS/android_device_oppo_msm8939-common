@@ -21,6 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=false \
     tunnel.audio.encode=false \
+    audio.deep_buffer.media=true \
     audio.offload.buffer.size.kb=64 \
     audio.offload.min.duration.secs=30 \
     av.offload.enable=true \
@@ -30,8 +31,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     voice.record.conc.disabled=true \
     voice.voip.conc.disabled=true
 
+# Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.deep_buffer.media=true
+    persist.camera.cpp.duplication=false
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
