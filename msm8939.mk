@@ -99,10 +99,13 @@ PRODUCT_PACKAGES += \
     libboringssl-compat \
     libstlport
 
-
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
+
+# Data
+PRODUCT_PACKAGES += \
+    librmnetctl
 
 # Display
 PRODUCT_PACKAGES += \
