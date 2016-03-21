@@ -39,12 +39,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
-    ro.telephony.default_network=9 \
+    ro.telephony.default_network=9,1 \
     ro.telephony.ril.config=simactivation \
     persist.radio.force_on_dc=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
-    persist.radio.multisim.config=dsds
+    persist.radio.multisim.config=dsds \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10 \
+    telephony.lteOnCdmaDevice \
+    persist.radio.custom_exp_ecc=1
 
 # WIFI
 PRODUCT_PROPERTY_OVERRIDES += \
