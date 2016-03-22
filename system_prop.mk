@@ -44,7 +44,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.force_on_dc=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
-    persist.radio.multisim.config=dsds
+    persist.radio.multisim.config=dsds \
+    ro.ril.hsxpa=1 \
+    ro.ril.gprsclass=10 \
+    persist.radio.custom_exp_ecc=1
 
 # WIFI
 PRODUCT_PROPERTY_OVERRIDES += \
