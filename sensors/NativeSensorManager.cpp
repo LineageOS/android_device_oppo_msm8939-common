@@ -469,17 +469,6 @@ int NativeSensorManager::getDataInfo() {
 				list->driver = new LightSensor(list);
 				sensor_light = *(list->sensor);
 				break;
-			case SENSOR_TYPE_GYROSCOPE:
-				has_gyro = 1;
-				list->driver = new GyroSensor(list);
-				sensor_gyro = *(list->sensor);
-				break;
-			case SENSOR_TYPE_PRESSURE:
-				list->driver = new PressureSensor(list);
-				break;
-			case SENSOR_TYPE_SIGNIFICANT_MOTION:
-				list->driver = new SmdSensor(list);
-				break;
 			default:
 				list->driver = NULL;
 				ALOGE("No handle %d for this type sensor!", i);
