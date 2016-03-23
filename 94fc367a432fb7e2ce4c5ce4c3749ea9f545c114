@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_fd9a5d6c",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2016-03-23T04:59:44Z",
+      "side": 1,
+      "message": "where exactly is it used?\ni grepped the source tree and blobs, i only saw it in device templates (in build/) where i traced back the introduction of it until back to 2010\n\ncommit 2b9b4d036334f99aa2355b478b179e4dbe23fa0a\nAuthor: Jean-Baptiste Queru \u003cjbq@google.com\u003e\nDate:   Mon Mar 22 10:55:26 2010 -0700\n\na google search returns the explanation of the property\nro.ril.hsxpa\u003d0 – UMTS r99\nro.ril.hsxpa\u003d1 – HSDPA\nro.ril.hsxpa\u003d2 – HSDPA/HSUPA",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 16
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_9d89e927",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2016-03-23T04:59:44Z",
+      "side": 1,
+      "message": "multi slot classes are used for GPRS/EGPRS\n\nhttps://en.wikipedia.org/wiki/General_Packet_Radio_Service\n\nin the same article \"Some high end mobiles, usually also supporting UMTS...\" so i guess that is kind of outdated.\n\nAlso does not return anything when grepping.",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 23
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_bd8e252c",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2016-03-23T04:59:44Z",
+      "side": 1,
+      "message": "what exactly is it doing, except existing in stock? :)",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
