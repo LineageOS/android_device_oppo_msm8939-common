@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_dd76813f",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7148
+      },
+      "writtenOn": "2016-03-23T07:04:34Z",
+      "side": 1,
+      "message": "every Vendor sets this for some reason",
+      "parentUuid": "7faddb67_fd9a5d6c",
+      "range": {
+        "startLine": 48,
+        "startChar": 4,
+        "endLine": 48,
+        "endChar": 16
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_9d89e927",
         "filename": "system_prop.mk",
         "patchSetId": 4
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_fd733d4c",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7148
+      },
+      "writtenOn": "2016-03-23T07:04:34Z",
+      "side": 1,
+      "message": "same for that prop",
+      "parentUuid": "7faddb67_9d89e927",
+      "range": {
+        "startLine": 49,
+        "startChar": 4,
+        "endLine": 49,
+        "endChar": 23
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_bd8e252c",
         "filename": "system_prop.mk",
         "patchSetId": 4
@@ -59,6 +107,30 @@
       "writtenOn": "2016-03-23T04:59:44Z",
       "side": 1,
       "message": "what exactly is it doing, except existing in stock? :)",
+      "range": {
+        "startLine": 50,
+        "startChar": 4,
+        "endLine": 50,
+        "endChar": 34
+      },
+      "revId": "94fc367a432fb7e2ce4c5ce4c3749ea9f545c114",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_7d9d0d58",
+        "filename": "system_prop.mk",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7148
+      },
+      "writtenOn": "2016-03-23T07:04:34Z",
+      "side": 1,
+      "message": "i\u0027ll do some research with IDA :)",
+      "parentUuid": "7faddb67_bd8e252c",
       "range": {
         "startLine": 50,
         "startChar": 4,
