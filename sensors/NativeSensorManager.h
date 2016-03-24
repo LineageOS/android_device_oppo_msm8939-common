@@ -106,6 +106,14 @@ struct SensorRefMap {
 	struct SensorContext *ctx;
 };
 
+struct OppoCalibrationData {
+	uint8_t unknown1[17];
+	uint8_t accelCalibOk;
+	int16_t accelOffset_be16[3];
+	int16_t proxOffset_be16;
+	uint8_t unknown2[5];
+} __attribute__((packed));
+
 class NativeSensorManager : public Singleton<NativeSensorManager> {
 	friend class Singleton<NativeSensorManager>;
 	NativeSensorManager();
@@ -120,6 +128,8 @@ class NativeSensorManager : public Singleton<NativeSensorManager> {
 	int mSensorCount;
 	bool mScanned;
 	int mEventCount;
+	OppoCalibrationData mCalibrationData;
+	bool mCalibrationDataInitialized;
 
 	DefaultKeyedVector<int32_t, struct SensorContext*> type_map;
 	DefaultKeyedVector<int32_t, struct SensorContext*> handle_map;

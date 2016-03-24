@@ -224,6 +224,8 @@ on post-fs-data
 
     mkdir /data/opponvitems  0771 radio radio
 
+    chown system system /sys/oppo_ftm/accel/cali
+    chown system system /sys/oppo_ftm/als_prox/calibration
     chown system system /sys/oppo_ftm/als_prox/name
     chown system system /sys/oppo_ftm/als_prox/ps_enable
     chown system system /sys/oppo_ftm/als_prox/prox_raw
@@ -412,12 +414,6 @@ service qti /system/vendor/bin/qti
     class main
     disabled
 
-service sensors /system/bin/sensors.qcom
-    class late_start
-    user root
-    group root
-    disabled
-
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
@@ -566,12 +562,6 @@ service hostapd /system/bin/hostapd -dd /data/hostapd/hostapd.conf
     group root
     oneshot
     disabled
-
-service sensor_work /system/bin/sensor_work
-    class late_start
-    user root
-    group root
-    oneshot
 
 service psensord /system/bin/psensord
     class late_start
