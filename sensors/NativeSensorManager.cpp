@@ -1207,40 +1207,9 @@ int NativeSensorManager::hasPendingEvents(int handle)
 	return list->driver->hasPendingEvents();
 }
 
-int NativeSensorManager::calibrate(int handle, struct cal_cmd_t *para)
-{
-	const SensorContext *list;
-	struct cal_result_t cal_result;
-	sensors_XML& sensor_XML(sensors_XML :: getInstance());
-	int err;
-
-	list = getInfoByHandle(handle);
-	if(list == NULL) {
-		ALOGE("Invalid handle(%d)", handle);
-		return -EINVAL;
-	}
-	sensor_XML.sensors_rm_file();
-	memset(&cal_result, 0, sizeof(cal_result));
-	err = list->driver->calibrate(handle, para, &cal_result);
-	if (err < 0) {
-		ALOGE("calibrate %s sensor error\n", list->sensor->name);
-		return err;
-	}
-	if (!para->save) {
-		return err;
-	}
-	err = sensor_XML.write_sensors_params(list->sensor, &cal_result, CAL_STATIC);
-	if (err < 0) {
-		ALOGE("write calibrate %s sensor error\n", list->sensor->name);
-		return err;
-	}
-	return err;
-}
-
 int NativeSensorManager::initCalibrate(const SensorContext *list)
 {
 	struct cal_result_t cal_result;
-	sensors_XML& sensor_XML(sensors_XML :: getInstance());
 	int err = 0;
 
 	if(list == NULL) {
@@ -1248,7 +1217,9 @@ int NativeSensorManager::initCalibrate(const SensorContext *list)
 		return -EINVAL;
 	}
 	memset(&cal_result, 0, sizeof(cal_result));
-	err = sensor_XML.read_sensors_params(list->sensor, &cal_result, CAL_STATIC);
+
+	// TODO: read from /data/opponvitems/50049
+	err = -ENOSYS;
 	if (err < 0) {
 		ALOGE("read %s calibrate params error\n", list->sensor->name);
 		return err;

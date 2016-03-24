@@ -227,7 +227,7 @@ again:
 						raw = mPendingEvent;
 
 						if (algo != NULL) {
-							if (algo->methods->convert(&raw, &result, NULL)) {
+							if (algo->methods->convert(&raw, &result)) {
 								ALOGE("Calibration failed.");
 								result.magnetic.x = CALIBRATE_ERROR_MAGIC;
 								result.magnetic.y = CALIBRATE_ERROR_MAGIC;
