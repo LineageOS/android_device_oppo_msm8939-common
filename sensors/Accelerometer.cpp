@@ -337,42 +337,18 @@ int AccelSensor::calibrate(int32_t, struct cal_cmd_t *para,
 
 int AccelSensor::initCalibrate(int32_t, struct cal_result_t *cal_result)
 {
-	int fd, i, err;
+	int fd, err;
 	char buf[LENGTH];
-	int arry[] = {CMD_W_OFFSET_X, CMD_W_OFFSET_Y, CMD_W_OFFSET_Z};
 
 	if (cal_result == NULL) {
 		ALOGE("Null pointer initcalibrate parameter\n");
 		return -1;
 	}
-	strlcpy(&input_sysfs_path[input_sysfs_path_len],
-			SYSFS_CALIBRATE, SYSFS_MAXLEN);
-	fd = open(input_sysfs_path, O_RDWR);
+	fd = open("/sys/oppo_ftm/accel/cali", O_WRONLY);
 	if (fd >= 0) {
-		int para1 = 0;
-
-		for(i = 0; i < (int)ARRAY_SIZE(arry); ++i) {
-			para1 = SET_CMD_H(cal_result->offset[i], arry[i]);
-			snprintf(buf, sizeof(buf), "%d", para1);
-			err = write(fd, buf, strlen(buf)+1);
-			if(err < 0) {
-				ALOGE("write error\n");
-				close(fd);
-				return err;
-			}
-
-			memset(buf, 0, sizeof(buf));
-			para1 = SET_CMD_L(cal_result->offset[i], arry[i]);
-			snprintf(buf, sizeof(buf), "%d", para1);
-			err = write(fd, buf, strlen(buf)+1);
-			if(err < 0) {
-				ALOGE("write error\n");
-				close(fd);
-				return err;
-			}
-		}
 		memset(buf, 0, sizeof(buf));
-		snprintf(buf, sizeof(buf), "%d", CMD_COMPLETE);
+		snprintf(buf, sizeof(buf), "%d %d %d",
+			cal_result->offset_x, cal_result->offset_y, cal_result->offset_z);
 		err = write(fd, buf, strlen(buf)+1);
 		if(err < 0) {
 			ALOGE("write error\n");
@@ -382,6 +358,6 @@ int AccelSensor::initCalibrate(int32_t, struct cal_result_t *cal_result)
 		close(fd);
 		return 0;
 	}
-	ALOGE("open %s error\n", input_sysfs_path);
+	ALOGE("accelerometer calibration file open error: %d", -errno);
 	return -1;
 }

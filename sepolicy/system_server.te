@@ -5,6 +5,11 @@ allow system_server proc_touchpanel:dir { search };
 # timerfd
 allow system_server rtc_device:chr_file rw_file_perms;
 
+# sensor calibration through sensor HAL
+allow system_server nv_data_file:dir { search };
+allow system_server nv_data_file:file r_file_perms;
+allow system_server sensor_calib_file:file rw_file_perms;
+
 # To improve app launch times - we would like to force all tasks to
 # run on big cores for app launch (sched_boost) - instead of just
 # boosting them to make it "more likely" to run on big cores.

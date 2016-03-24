@@ -17,5 +17,4 @@
 
 /data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0
 
-/system/bin/sensor_work						u:object_r:sensor_init_exec:s0
 /system/bin/psensord						u:object_r:sensor_init_exec:s0
