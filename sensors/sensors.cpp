@@ -214,14 +214,7 @@ int sensors_poll_context_t::pollEvents(sensors_event_t* data, int count)
 
 int sensors_poll_context_t::calibrate(int handle, struct cal_cmd_t *para)
 {
-
-	int err = -1;
-	NativeSensorManager& sm(NativeSensorManager::getInstance());
-	Mutex::Autolock _l(mLock);
-
-	err = sm.calibrate(handle, para);
-
-	return err;
+	return -ENOSYS;
 }
 
 int sensors_poll_context_t::batch(int handle, int sample_ns, int latency_ns)
