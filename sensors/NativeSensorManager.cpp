@@ -284,7 +284,9 @@ const struct SysfsMap NativeSensorManager::node_map[] = {
 };
 
 NativeSensorManager::NativeSensorManager():
-	mSensorCount(0), mScanned(false), mEventCount(0), type_map(NULL), handle_map(NULL), fd_map(NULL)
+	mSensorCount(0), mScanned(false), mEventCount(0),
+	mCalibrationDataInitialized(false),
+	type_map(NULL), handle_map(NULL), fd_map(NULL)
 {
 	int i;
 
@@ -1218,11 +1220,42 @@ int NativeSensorManager::initCalibrate(const SensorContext *list)
 	}
 	memset(&cal_result, 0, sizeof(cal_result));
 
-	// TODO: read from /data/opponvitems/50049
-	err = -ENOSYS;
+	if (!mCalibrationDataInitialized) {
+	    int fd = open("/data/opponvitems/50049", O_RDONLY);
+	    if (fd < 0) {
+		err = -errno;
+	    } else {
+		ssize_t readBytes = read(fd, &mCalibrationData, sizeof(mCalibrationData));
+		if (readBytes < 0) {
+		    err = -errno;
+		} else if (readBytes != sizeof(mCalibrationData)) {
+		    err = -EIO;
+		} else {
+		    mCalibrationDataInitialized = true;
+		}
+	    }
+	}
 	if (err < 0) {
-		ALOGE("read %s calibrate params error\n", list->sensor->name);
+		ALOGE("read %s calibrate params error: %d", list->sensor->name, err);
 		return err;
+	}
+
+	switch (list->sensor->type) {
+	    case SENSOR_TYPE_ACCELEROMETER:
+		if (!mCalibrationData.accelCalibOk) {
+		    return 0;
+		}
+		// Oppo's data was generated against a scaling of 1024/G, while the kernel
+		// driver now operates at 16384/G, so we need to scale up that data
+		cal_result.offset_x = 16 * (int16_t) ntohs(mCalibrationData.accelOffset_be16[0]);
+		cal_result.offset_y = 16 * (int16_t) ntohs(mCalibrationData.accelOffset_be16[1]);
+		cal_result.offset_z = 16 * (int16_t) ntohs(mCalibrationData.accelOffset_be16[2]);
+		break;
+	    case SENSOR_TYPE_PROXIMITY:
+		cal_result.offset[0] = (int16_t) ntohs(mCalibrationData.proxOffset_be16);
+		break;
+	    default:
+		return 0;
 	}
 
 	err = list->driver->initCalibrate(list->sensor->handle, &cal_result);
