@@ -37,7 +37,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    rild.libpath=/vendor/lib/libril-qc-qmi-1.so \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=9,9 \
     ro.telephony.ril.config=simactivation \
@@ -55,7 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/config \
     drm.service.enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
