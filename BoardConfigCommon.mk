@@ -76,9 +76,6 @@ endif
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
-# Assertions
-TARGET_BOARD_INFO_FILE ?= device/oppo/msm8939-common/board-info.txt
-
 # Audio
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
