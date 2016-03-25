@@ -149,7 +149,6 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.qcom \
     init.oppo.rc \
     init.oppo.usb.rc \
     init.qcom-common.rc \
