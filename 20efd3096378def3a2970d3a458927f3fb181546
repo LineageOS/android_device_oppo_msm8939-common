@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7faddb67_d1c2e5e9",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-03-25T23:28:34Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7faddb67_9bba4edc",
+      "revId": "20efd3096378def3a2970d3a458927f3fb181546",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7faddb67_3bcf9a80",
         "filename": "system_prop.mk",
         "patchSetId": 1
@@ -30,6 +48,30 @@
       "writtenOn": "2016-03-25T04:31:25Z",
       "side": 0,
       "message": "R7+ tree?",
+      "range": {
+        "startLine": 58,
+        "startChar": 4,
+        "endLine": 58,
+        "endChar": 53
+      },
+      "revId": "20efd3096378def3a2970d3a458927f3fb181546",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_71b77188",
+        "filename": "system_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-03-25T23:28:34Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "7faddb67_3bcf9a80",
       "range": {
         "startLine": 58,
         "startChar": 4,
