@@ -55,7 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/bootdevice/by-name/config \
     drm.service.enabled=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
