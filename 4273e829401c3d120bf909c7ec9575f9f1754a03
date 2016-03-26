@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_14562b2b",
+        "filename": "configs/calmodule.cfg",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-03-26T17:41:11Z",
+      "side": 1,
+      "message": "Move this file to devices too? Danny?",
+      "revId": "4273e829401c3d120bf909c7ec9575f9f1754a03",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7faddb67_b4307709",
+        "filename": "gps/Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-03-26T17:41:11Z",
+      "side": 1,
+      "message": "Put the gps hal in devices too? r7plus blobs don\u0027t work on r7 so I used kipper hal \u0026 blobs",
+      "revId": "4273e829401c3d120bf909c7ec9575f9f1754a03",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
