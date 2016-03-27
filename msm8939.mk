@@ -112,11 +112,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
-# Filesystem
-PRODUCT_PACKAGES += \
-    e2fsck \
-    make_ext4fs
-
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8916
@@ -166,7 +161,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     librmnetctl \
-    libshim_parcel \
     libxml2
 
 # Wifi
