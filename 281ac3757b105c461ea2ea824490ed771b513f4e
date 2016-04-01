@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7faddb67_67cd615c",
+        "filename": "msm8939.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-04-01T15:47:23Z",
+      "side": 0,
+      "message": "You should move these too",
+      "range": {
+        "startLine": 53,
+        "startChar": 0,
+        "endLine": 54,
+        "endChar": 81
+      },
+      "revId": "281ac3757b105c461ea2ea824490ed771b513f4e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
