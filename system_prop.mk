@@ -11,8 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     debug.composition.type=c2d \
     debug.sf.gpu_comp_tiling=1 \
-    sys.hwc.gpu_perf_mode=1 \
-    ro.sf.lcd_density=480
+    sys.hwc.gpu_perf_mode=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.ssr=false \
