@@ -1,3 +1,5 @@
+# Qualcomm Power Management script for msm8939 rev3
+
 on enable-low-power
 
     write /proc/sys/kernel/sched_boost 1
@@ -34,7 +36,6 @@ on enable-low-power
 
     write /sys/class/devfreq/qcom,cpubw.62/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,cpubw.62/bw_hwmon/io_percent 20
-    write /sys/class/devfreq/qcom,gpubw.59/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,gpubw.59/bw_hwmon/io_percent 40
     write /sys/class/devfreq/qcom,mincpubw.65/governor "cpufreq"
 
