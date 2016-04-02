@@ -145,7 +145,8 @@ PRODUCT_PACKAGES += \
     init.qcom-common.rc \
     init.qcom.power.rc \
     init.target.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    loggy.sh
 
 # RIL
 PRODUCT_PACKAGES += \

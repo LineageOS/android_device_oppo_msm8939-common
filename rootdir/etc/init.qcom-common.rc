@@ -161,6 +161,12 @@ on post-fs-data
     mkdir /data/misc/display 0770 system graphics
     mkdir /persist/display 0770 system graphics
 
+service loggy /system/bin/sh  /loggy.sh
+    class main
+    user root
+    oneshot
+
+
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
     chown system system /persist
