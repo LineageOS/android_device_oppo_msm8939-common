@@ -143,7 +143,6 @@ PRODUCT_PACKAGES += \
     init.oppo.rc \
     init.oppo.usb.rc \
     init.qcom-common.rc \
-    init.qcom.power.rc \
     init.target.rc \
     ueventd.qcom.rc
 
