@@ -39,6 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=false \
     ro.telephony.default_network=9,9 \
     ro.telephony.ril.config=simactivation \
+    ro.ril.multi_rat_capable=false \
     persist.radio.force_on_dc=true \
     persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.sib16_support=1 \
