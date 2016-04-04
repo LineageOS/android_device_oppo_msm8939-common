@@ -133,10 +133,9 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.oppo.rc \
-    init.oppo.usb.rc \
     init.qcom-common.rc \
     init.qcom.power.rc \
+    init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
     ueventd.qcom.rc
