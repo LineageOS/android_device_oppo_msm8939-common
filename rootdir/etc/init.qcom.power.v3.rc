@@ -105,7 +105,6 @@ on enable-low-power
     setprop ro.min_freq_0 960000
     setprop ro.min_freq_4 800000
 
-    rm /data/system/perfd/default_values
     start perfd
 
 on charger
