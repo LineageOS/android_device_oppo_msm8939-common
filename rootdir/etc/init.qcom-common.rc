@@ -235,6 +235,16 @@ on post-fs-data
     chown system system /sys/oppo_ftm/als_prox/algo_info
     chown system system /sys/oppo_ftm/als_prox/ps_min
 
+    # Vibrator intensity control
+    chown system system /sys/class/timed_output/vibrator/vtg_level
+    chown system system /sys/class/timed_output/vibrator/vtg_max
+    chown system system /sys/class/timed_output/vibrator/vtg_min
+    chown system system /sys/class/timed_output/vibrator/vtg_default
+    chmod 0644 /sys/class/timed_output/vibrator/vtg_level
+    chmod 0444 /sys/class/timed_output/vibrator/vtg_max
+    chmod 0444 /sys/class/timed_output/vibrator/vtg_min
+    chmod 0444 /sys/class/timed_output/vibrator/vtg_default
+
     # Touchscreen
     chown system radio /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
