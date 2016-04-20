@@ -487,9 +487,6 @@ service ptt_ffbm /system/bin/ptt_socket_app -f -d
     disabled
     oneshot
 
-service cnss-daemon /system/bin/cnss-daemon -n -l
-    class late_start
-
 service dhcpcd_bt-pan /system/bin/dhcpcd -BKLG
     class late_start
     disabled
