@@ -18,3 +18,7 @@
 /data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0
 
 /system/bin/psensord						u:object_r:sensor_init_exec:s0
+
+/system/etc/init\.qcom\.bt\.sh                                  u:object_r:bluetooth_loader_exec:s0
+
+/dev/smd3                                                       u:object_r:hci_attach_dev:s0
