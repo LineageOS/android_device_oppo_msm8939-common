@@ -91,6 +91,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# Gello
+PRODUCT_PACKAGES += \
+    Gello
+
 # IRQ balance
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
