@@ -147,11 +147,9 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.msm8916 \
-    libcalmodule_common
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/calmodule.cfg:system/vendor/etc/calmodule.cfg
+    calmodule.cfg \
+    libcalmodule_common \
+    sensors.msm8916
 
 # Wifi
 PRODUCT_PACKAGES += \
