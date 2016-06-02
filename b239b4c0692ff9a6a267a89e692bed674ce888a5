@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5faad753_2aa91323",
+        "filename": "rootdir/etc/init.qcom.power.v1.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-06-02T18:14:25Z",
+      "side": 0,
+      "message": "Defaults to bw_hwmon in kernel. In fact gpu config is identical to msm8939 v3.0",
+      "revId": "b239b4c0692ff9a6a267a89e692bed674ce888a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_0a53f740",
+        "filename": "rootdir/etc/init.qcom.power.v1.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2016-06-02T18:14:25Z",
+      "side": 0,
+      "message": "Evil copy paste",
+      "range": {
+        "startLine": 19,
+        "startChar": 34,
+        "endLine": 19,
+        "endChar": 35
+      },
+      "revId": "b239b4c0692ff9a6a267a89e692bed674ce888a5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
