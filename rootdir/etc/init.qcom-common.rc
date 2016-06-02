@@ -136,6 +136,9 @@ on boot
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
 
+    # Allow the power HAL to control cluster plug
+    chown system system /sys/module/cluster_plug/parameters/low_power_mode
+
 on post-fs-data
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
@@ -538,4 +541,5 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     class core
     user root
     group root
+    disabled
     writepid /dev/cpuset/system-background/tasks
