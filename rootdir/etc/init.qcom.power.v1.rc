@@ -15,8 +15,7 @@ on enable-low-power
 
     write /sys/class/devfreq/qcom,cpubw.64/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,cpubw.64/bw_hwmon/io_percent 20
-    write /sys/class/devfreq/qcom,gpubw.61/governor "bw_hwmon"
-    write /sys/class/devfreq/qcom,cpubw.61/bw_hwmon/io_percent 40
+    write /sys/class/devfreq/qcom,gpubw.61/bw_hwmon/io_percent 40
     write /sys/class/devfreq/qcom,mincpubw.65/governor "cpufreq"
 
     # disable thermal core_control to update interactive gov settings
