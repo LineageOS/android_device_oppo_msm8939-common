@@ -22,7 +22,7 @@
 #define LOG_TAG "PowerHAL_MSM8939_Ext"
 #include <utils/Log.h>
 
-#define LOW_POWER_MODE_PATH "/sys/module/cluster_plug/parameters/low_power_mode"
+#define BIG_MAX_CPU_PATH "/sys/devices/system/cpu/cpu0/core_ctl/max_cpus"
 
 static void sysfs_write(char *path, char *s)
 {
@@ -47,6 +47,6 @@ static void sysfs_write(char *path, char *s)
 
 void cm_power_set_interactive_ext(int on)
 {
-    ALOGD("%s cluster-plug low power mode", on ? "disabling" : "enabling");
-    sysfs_write(LOW_POWER_MODE_PATH, on ? "0" : "1");
+    ALOGD("%sabling big CPU cluster", on ? "En" : "Dis");
+    sysfs_write(BIG_MAX_CPU_PATH, on ? "4" : "0");
 }
