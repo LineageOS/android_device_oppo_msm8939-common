@@ -1,7 +1,6 @@
 # Qualcomm Power Management script for msm8939 rev3
 
 on enable-low-power
-
     write /proc/sys/kernel/sched_boost 1
 
     write /sys/class/net/rmnet0/queues/rx-0/rps_cpus 10
@@ -39,9 +38,8 @@ on enable-low-power
     write /sys/class/devfreq/gpubw/bw_hwmon/io_percent 40
     write /sys/class/devfreq/mincpubw/governor "cpufreq"
 
-    # disable thermal core_control and cluster plug to update interactive gov settings
+    # disable thermal core_control to update interactive gov settings
     write /sys/module/msm_thermal/core_control/enabled 0
-    write /sys/module/cluster_plug/parameters/active 0
 
     # enable governor for perf cluster
     write /sys/devices/system/cpu/cpu0/online 1
@@ -67,9 +65,8 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 800000
 
-    # enable thermal core_control and cluster plug now
+    # enable thermal core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
-    write /sys/module/cluster_plug/parameters/active 1
 
     # Bring up all cores online
     write /sys/devices/system/cpu/cpu1/online 1
@@ -87,6 +84,19 @@ on enable-low-power
 
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # Enable core control
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
+    write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 68
+    write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 40
+    write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4
+    write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 1
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 20
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 5
+    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 5000
+    write /sys/devices/system/cpu/cpu4/core_ctl/not_preferred 1
 
     # HMP scheduler (big.Little cluster related) settings
     write /proc/sys/kernel/sched_upmigrate 93
