@@ -102,6 +102,13 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8916
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
+
 # IRQ balance
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/msm_irqbalance.conf:system/vendor/etc/msm_irqbalance.conf
