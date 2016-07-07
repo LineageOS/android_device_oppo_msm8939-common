@@ -28,6 +28,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------------------------------------------------------------*/
 #include "NativeSensorManager.h"
 #include <unistd.h>
+#include <sys/endian.h>
 
 ANDROID_SINGLETON_STATIC_INSTANCE(NativeSensorManager);
 
