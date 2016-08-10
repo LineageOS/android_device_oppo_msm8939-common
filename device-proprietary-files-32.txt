@@ -114,7 +114,6 @@ vendor/lib/libsmemlog.so
 -app/shutdownlistener/shutdownlistener.apk
 bin/netmgrd
 bin/qmuxd
-bin/rfs_access
 bin/rmt_storage
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
