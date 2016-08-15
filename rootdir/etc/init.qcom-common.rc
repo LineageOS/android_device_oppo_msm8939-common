@@ -473,6 +473,9 @@ service charger /sbin/healthd -c
     critical
     seclabel u:r:healthd:s0
 
+on charger
+    write /sys/class/leds/lcd-backlight/brightness 100
+
 service qseecomd /system/bin/qseecomd
     class core
     user root
