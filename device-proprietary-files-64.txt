@@ -26,7 +26,7 @@ vendor/lib64/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8916.so
+lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so
@@ -76,16 +76,16 @@ vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
 
 # Media
+lib/libOmxVdecHevc.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOmxVdecHevc.so
 
 # Perf
 bin/msm_irqbalance
-vendor/bin/perfd
+bin/perfd:vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
@@ -162,7 +162,7 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Thermal
-vendor/bin/thermal-engine
+bin/thermal-engine:vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 vendor/lib/libthermalclient.so
@@ -171,6 +171,6 @@ vendor/lib/libthermalclient.so
 -app/TimeService/TimeService.apk
 bin/time_daemon
 -vendor/lib64/libtime_genoff.so
--vendor/lib/libtime_genoff.so
 vendor/lib64/libTimeService.so
+-vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
