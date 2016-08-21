@@ -20,7 +20,7 @@ vendor/lib/libbtnv.so
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8916.so
+lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so
@@ -79,7 +79,7 @@ vendor/lib/libOmxQcelp13Dec.so
 
 # Perf
 bin/msm_irqbalance
-vendor/bin/perfd
+bin/perfd:vendor/bin/perfd
 vendor/lib/libqti-perfd-client.so
 
 # Postprocessing
@@ -139,7 +139,7 @@ etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
 # Thermal
-vendor/bin/thermal-engine
+bin/thermal-engine:vendor/bin/thermal-engine
 vendor/lib/libthermalclient.so
 vendor/lib/libthermalioctl.so
 
