@@ -86,6 +86,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libshim_camera \
+    libshim_camera_hal \
     libboringssl-compat \
     libstlport \
     Snap
@@ -94,10 +95,6 @@ PRODUCT_PACKAGES += \
 WITH_CM_CHARGER := false
 PRODUCT_PACKAGES += \
     charger_res_images
-
-# CNE
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1
 
 # Display
 PRODUCT_PACKAGES += \
@@ -116,11 +113,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.location \
-    ro.gps.agps_provider=1
 
 # IRQ balance
 PRODUCT_COPY_FILES += \
@@ -172,9 +164,12 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    telephony-ext \
     libcnefeatureconfig \
     librmnetctl \
     libxml2
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Sensors
 PRODUCT_PACKAGES += \
