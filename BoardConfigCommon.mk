@@ -63,7 +63,7 @@ ENABLE_CPUSETS := true
 
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 androidboot.selinux=permissive
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --tags_offset 0x00000100
@@ -87,7 +87,7 @@ BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FLUENCE := true
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE := true
 AUDIO_FEATURE_ENABLED_NEW_SAMPLE_RATE := true
-USE_CUSTOM_AUDIO_POLICY := 1
+USE_CUSTOM_AUDIO_POLICY := 0
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -100,15 +100,11 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Camera
-COMMON_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
+BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(COMMON_PATH)/charger/images
-
-# CNE
-BOARD_USES_QCNE := true
-TARGET_LDPRELOAD := libNimsWrap.so
 
 # Display
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -131,9 +127,6 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
-
-# Malloc
-MALLOC_IMPL := dlmalloc
 
 # Power
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(COMMON_PATH)/power/power_ext.c
