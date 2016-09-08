@@ -77,12 +77,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     drm.service.enabled=true
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.gps.qc_nlp_in_use=1 \
-    persist.loc.nlp_name=com.qualcomm.location \
-    ro.gps.agps_provider=1 \
-    ro.pip.gated=0
-
 # Disable QMI logspam
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0
