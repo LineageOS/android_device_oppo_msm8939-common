@@ -69,3 +69,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Disable QMI logspam
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.qmi.adb_logmask=0
+
+# sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sdcardfs.enable=true
