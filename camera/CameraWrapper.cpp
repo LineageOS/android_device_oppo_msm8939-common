@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2014, The CyanogenMod Project
+ * Copyright (C) 2017, The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +31,9 @@
 #include <hardware/camera.h>
 #include <utils/threads.h>
 #include <gui/SensorManager.h>
+
+#define OPEN_RETRIES    10
+#define OPEN_RETRY_MSEC 40
 
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
@@ -92,8 +96,8 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         hw_device_t **device)
 {
     int rv = 0;
-    int num_cameras = 0;
-    int cameraid;
+    int retries = OPEN_RETRIES;
+    bool retry;
 
     android::Mutex::Autolock lock(gCameraWrapperLock);
 
@@ -112,8 +116,15 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         return android::NO_INIT;
     }
 
-    return gVendorModule->common.methods->open(
-            (const hw_module_t*)gVendorModule, name, device);
+    do {
+        rv = gVendorModule->common.methods->open(
+                (const hw_module_t*)gVendorModule, name, device);
+        retry = --retries > 0 && rv;
+        if (retry)
+            usleep(OPEN_RETRY_MSEC * 1000);
+    } while (retry);
+
+    return rv;
 }
 
 static int camera_get_number_of_cameras(void)
