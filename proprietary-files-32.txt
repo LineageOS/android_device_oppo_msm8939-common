@@ -1,11 +1,11 @@
 # GPS - from kipper
--lib/libloc_api_v02.so|00cfacbec31c58f8ef5425cd71f8274cc3f743b0
+-lib/libloc_api_v02.so|0187c7a38e2a38a258087c78493dc0302f75c924
 -lib/libloc_ds_api.so|bb7debdbe94af80cc692cb72eca17655103c5f14
 vendor/lib/hw/flp.default.so|6d0fbc257f55373274a970f7081c3504a0a5178f
 vendor/lib/libflp.so|aec819da2d22967c4b2c49ca55b4f3f74c4af0f8
 vendor/lib/libgeofence.so|b91de149da071fddb42772bb10439077d7b0b39a
 vendor/lib/libizat_core.so|bf23714f97dbe611148c592c6677ee0171d36336
-vendor/lib/liblbs_core.so|bd3de833e353506b5073d996068373e13010b2a2
+vendor/lib/liblbs_core.so|1937f8a063e8d2a2e7822ff54c24da64f7915033
 
 # Graphics - from kipper
 vendor/lib/egl/eglsubAndroid.so|936e05078ff4494995034a840823e0a7702651c5
