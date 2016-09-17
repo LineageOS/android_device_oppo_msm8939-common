@@ -1,18 +1,18 @@
 # GPS - from kipper
--lib64/libloc_api_v02.so|18cd3ddde7919358099e1d1de60f7d23ca750618
+-lib64/libloc_api_v02.so|2c21d859d293aaecc2325b9b86e15da5a6a0d482
 -lib64/libloc_ds_api.so|8f7cb07d68559efda0105866ef3f9ae57b8b6609
--lib/libloc_api_v02.so|00cfacbec31c58f8ef5425cd71f8274cc3f743b0
+-lib/libloc_api_v02.so|0187c7a38e2a38a258087c78493dc0302f75c924
 -lib/libloc_ds_api.so|bb7debdbe94af80cc692cb72eca17655103c5f14
 vendor/lib64/hw/flp.default.so|22300e06491cb1fdf9bbf8c816d3c789790d09b9
 vendor/lib64/libflp.so|4bd0052875205a4b106169ddd8451e2e0151a7fe
 vendor/lib64/libgeofence.so|5be57ed7ddb8005a06a0779c3104cacaf52f607b
 vendor/lib64/libizat_core.so|2516fd1cbaa2e2ec9e374076c907ab3aed345ba5
-vendor/lib64/liblbs_core.so|06a24ffcbd976cac346a9cc9fe54b343000e976a
+vendor/lib64/liblbs_core.so|d9ec812fc5835316a7e8413a1781ec96c7ef1a00
 vendor/lib/hw/flp.default.so|6d0fbc257f55373274a970f7081c3504a0a5178f
 vendor/lib/libflp.so|aec819da2d22967c4b2c49ca55b4f3f74c4af0f8
 vendor/lib/libgeofence.so|b91de149da071fddb42772bb10439077d7b0b39a
 vendor/lib/libizat_core.so|bf23714f97dbe611148c592c6677ee0171d36336
-vendor/lib/liblbs_core.so|bd3de833e353506b5073d996068373e13010b2a2
+vendor/lib/liblbs_core.so|1937f8a063e8d2a2e7822ff54c24da64f7915033
 
 # Graphics - from kipper
 vendor/lib64/egl/eglsubAndroid.so|b8314d91b88b317c41d36137c3afa12bf88676e6
