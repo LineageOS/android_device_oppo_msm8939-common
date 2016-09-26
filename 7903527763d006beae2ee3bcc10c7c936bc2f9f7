@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_d9062887",
+        "filename": "rootdir/etc/init.qcom.power.v3.rc",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1063
+      },
+      "writtenOn": "2016-09-26T12:40:11Z",
+      "side": 1,
+      "message": "I wonder whether we should also set busy_up_thres/busy_down_thres for cpu4 so CPU5..7 can be offlined as well.",
+      "revId": "7903527763d006beae2ee3bcc10c7c936bc2f9f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
