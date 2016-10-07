@@ -49,6 +49,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+    media.stagefright.legacyencoder=true \
+    media.stagefright.less-secure=true \
     persist.camera.cpp.duplication=false
 
 # Reduce client buffer size for fast audio output tracks
