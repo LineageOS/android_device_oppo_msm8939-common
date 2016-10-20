@@ -58,6 +58,9 @@ TARGET_NO_BOOTLOADER := true
 # Clang
 USE_CLANG_PLATFORM_BUILD := true
 
+# CM Hardware
+BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
+
 # Cpusets
 ENABLE_CPUSETS := true
 
