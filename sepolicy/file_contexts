@@ -19,3 +19,6 @@
 
 # Wi-Fi
 /persist/.genmac                                                u:object_r:wifi_data_file:s0
+
+# Perfd
+/data/misc/perfd(/.*)?                                          u:object_r:mpctl_socket:s0
