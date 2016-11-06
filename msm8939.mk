@@ -172,6 +172,10 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     sensors.msm8916
 
+# Widevine
+PRODUCT_PACKAGES += \
+    libshim_wvm
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
