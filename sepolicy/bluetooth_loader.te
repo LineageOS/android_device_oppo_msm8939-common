@@ -1,12 +1,12 @@
 # Bluetooth executables and scripts
-type bluetooth_loader, domain;
+type bluetooth_loader, domain, domain_deprecated;
 type bluetooth_loader_exec, exec_type, file_type;
 
 # Start bdAddrLoader from init
 init_daemon_domain(bluetooth_loader)
 
 # Run init.qcom.bt.sh
-allow bluetooth_loader shell_exec:file { entrypoint read };
+allow bluetooth_loader shell_exec:file { entrypoint getattr read };
 allow bluetooth_loader bluetooth_loader_exec:file { getattr open execute_no_trans };
 
 # init.qcom.bt.sh needs /system/bin/log access
@@ -21,6 +21,7 @@ set_prop(bluetooth_loader, bluetooth_prop)
 
 # Allow getprop/setprop for init.qcom.bt.sh
 allow bluetooth_loader system_file:file execute_no_trans;
+allow bluetooth_loader toolbox_exec:file rx_file_perms;
 
 # Access the smd device
 allow bluetooth_loader hci_attach_dev:chr_file rw_file_perms;
