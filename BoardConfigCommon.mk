@@ -165,6 +165,9 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# SDClang
+TARGET_USE_SDCLANG := true
+
 # inherit from the proprietary version
 ifeq ($(FORCE_32_BIT),true)
 -include vendor/oppo/msm8939-common-32/BoardConfigVendor.mk
