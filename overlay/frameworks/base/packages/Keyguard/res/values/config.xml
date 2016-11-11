@@ -20,8 +20,8 @@
 <!-- These resources are around just to allow their values to be customized -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- Threshold in micro amperes above which a charger is rated as "fast"
-         Normal chargers appear with up to 2A, while we want to indicate fast
-         charging only while VOOC is active, so use 3A as threshold -->
-    <integer name="config_chargingFastThreshold">3000000</integer>
+    <!-- Threshold in micro watts above which a charger is rated as "fast"
+         Normal chargers appear with up to 6W, while we want to indicate fast
+         charging only while VOOC is active, so use 10W as threshold -->
+    <integer name="config_chargingFastThreshold">10000000</integer>
 </resources>
