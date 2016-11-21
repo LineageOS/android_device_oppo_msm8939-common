@@ -47,6 +47,8 @@ fi
 
 write_makefiles "$MY_DIR"/proprietary-files-$BITS.txt
 
+printf '\n%s\n' "\$(call inherit-product, vendor/qcom/binaries/msm8916/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
+
 write_footers
 
 # Reinitialize the helper for device
