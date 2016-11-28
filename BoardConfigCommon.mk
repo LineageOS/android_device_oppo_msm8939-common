@@ -165,6 +165,11 @@ WIFI_DRIVER_FW_PATH_AP := "ap"
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# overlays only for 64 bit Devices
+ifeq ($(FORCE_32_BIT),false)
+DEVICE_PACKAGE_OVERLAYS += device/oppo/msm8939-common/overlay_64
+endif
+
 # inherit from the proprietary version
 ifeq ($(FORCE_32_BIT),true)
 -include vendor/oppo/msm8939-common-32/BoardConfigVendor.mk
