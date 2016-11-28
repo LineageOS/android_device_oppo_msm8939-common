@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_262bd694",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-11-28T10:21:59Z",
+      "side": 1,
+      "message": "This should be ifneq ($(FORCE_32_BIT),true)",
+      "revId": "cac94b635b32b451cd652b0325c641f03b160ac5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
