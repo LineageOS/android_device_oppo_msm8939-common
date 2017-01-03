@@ -14,10 +14,6 @@ vendor/lib/libgeofence.so|b91de149da071fddb42772bb10439077d7b0b39a
 vendor/lib/libizat_core.so|bf23714f97dbe611148c592c6677ee0171d36336
 vendor/lib/liblbs_core.so|1937f8a063e8d2a2e7822ff54c24da64f7915033
 
-# Graphics firmware - from kipper
-etc/firmware/a420_pfp.fw|ceb61d9f1385b3f2956d72f33e0bd43cb12f72f0
-etc/firmware/a420_pm4.fw|d8ca599bd61cc85fec0b39c11ccd046d863ba7b3
-
 # Widevine - from bullhead
 vendor/lib/libwvdrm_L1.so|3eaf8ed1cb337608a1ccdb80d2c95804e7aea323
 vendor/lib/libwvm.so|59c4c078f4b897ddac8f665309b7a3f25522f207
