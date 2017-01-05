@@ -103,6 +103,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8916
