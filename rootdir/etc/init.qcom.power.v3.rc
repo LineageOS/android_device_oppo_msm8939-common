@@ -83,14 +83,13 @@ on enable-low-power
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
-    # Configure foreground and background cpusets
+    # Update foreground and background cpusets
     # Reserve CPU 7 for the top app
     write /dev/cpuset/foreground/cpus 0-6
     write /dev/cpuset/foreground/boost/cpus 0-3
-    write /dev/cpuset/background/cpus 4-6
+    write /dev/cpuset/background/cpus 4
     write /dev/cpuset/system-background/cpus 4-6
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/camera-daemon/cpus 4-7
 
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
