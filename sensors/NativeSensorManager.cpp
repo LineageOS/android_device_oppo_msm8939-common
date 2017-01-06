@@ -327,7 +327,7 @@ NativeSensorManager::~NativeSensorManager()
 			delete context[i].driver;
 		}
 
-		if (node != NULL) {
+		if (!list_empty(&(context[i].listener))) {
 			list_for_each_safe(node, n, &context[i].listener) {
 				item = node_to_item(node, struct SensorRefMap, list);
 				if (item != NULL) {
@@ -335,7 +335,9 @@ NativeSensorManager::~NativeSensorManager()
 					delete item;
 				}
 			}
+		}
 
+		if (!list_empty(&(context[i].dep_list))) {
 			list_for_each_safe(node, n, &context[i].dep_list) {
 				item = node_to_item(node, struct SensorRefMap, list);
 				if (item != NULL) {
@@ -840,7 +842,7 @@ int NativeSensorManager::getSensorListInner()
 		return 0;
 	}
 	strlcpy(devname, dirname, PATH_MAX);
-	filename = devname + strlen(devname);
+	filename = devname + strlen(dirname);
 
 	while ((de = readdir(dir))) {
 		if(de->d_name[0] == '.' &&
