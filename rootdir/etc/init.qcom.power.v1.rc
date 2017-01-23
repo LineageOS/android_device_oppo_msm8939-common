@@ -62,12 +62,12 @@ on enable-low-power
     chown system system /dev/cpuset/camera-daemon/tasks
     chmod 0664 /dev/cpuset/camera-daemon/tasks
 
-    # Configure foreground and background cpusets
-    # Reserve CPU 7 for the top app
-    write /dev/cpuset/foreground/cpus 0-6
+    # update foreground cpuset now that processors are up
+    # reserve CPU 4 for the top app
+    write /dev/cpuset/foreground/cpus 0-3,5-7
     write /dev/cpuset/foreground/boost/cpus 0-3
-    write /dev/cpuset/background/cpus 4-6
-    write /dev/cpuset/system-background/cpus 4-6
+    write /dev/cpuset/background/cpus 4
+    write /dev/cpuset/system-background/cpus 5-7
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/camera-daemon/cpus 4-7
 
@@ -79,17 +79,12 @@ on enable-low-power
     write /proc/sys/kernel/sched_downmigrate 60
 
     # Enable core control
-    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 2
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 68
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 40
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
-    write /sys/devices/system/cpu/cpu0/core_ctl/task_thres 4
     write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 1
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 20
-    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 5
-    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 5000
-    write /sys/devices/system/cpu/cpu4/core_ctl/not_preferred 1
 
     # cpu idle load threshold
     write /sys/devices/system/cpu/cpu0/sched_mostly_idle_load 30
