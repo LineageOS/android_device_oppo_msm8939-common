@@ -222,4 +222,5 @@
 /dev/block/bootdevice/by-name/config    0660   system     system
 
 # Fingerprint sensor
-/dev/fpc1020		 0660	system	system
+/sys/devices/soc.0/fpc_fpc1020*	irq		0600	system	system
+/sys/devices/soc.0/fpc_fpc1020*	wakeup_enable	0200	system	system
