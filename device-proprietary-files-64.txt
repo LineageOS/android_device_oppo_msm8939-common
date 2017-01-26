@@ -139,6 +139,9 @@ bin/netmgrd
 bin/qmuxd
 bin/rfs_access
 bin/rmt_storage
+-etc/dsi_config.xml
+-etc/netmgr_config.xml
+-etc/qmi_config.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 -framework/qcnvitems.jar
