@@ -136,6 +136,9 @@ vendor/lib/libsmemlog.so
 bin/netmgrd
 bin/qmuxd
 bin/rmt_storage
+etc/data/dsi_config.xml
+etc/data/netmgr_config.xml
+etc/data/qmi_config.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 -framework/qcnvitems.jar
