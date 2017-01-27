@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a437d4f_0346c7bf",
+        "filename": "device-proprietary-files-64.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-01-27T13:43:11Z",
+      "side": 1,
+      "message": "Move it down to sort alphabetically",
+      "revId": "8febff1876f4009962a7d2bcbb39bb6eb91162b8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
