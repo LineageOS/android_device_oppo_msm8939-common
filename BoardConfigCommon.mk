@@ -141,6 +141,9 @@ TARGET_RIL_VARIANT := caf
 # Recovery
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
+ifeq ($(WITH_TWRP),true)
+-include $(COMMON_PATH)/twrp.mk
+endif
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

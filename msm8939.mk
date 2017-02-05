@@ -172,6 +172,12 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     sensors.msm8916
 
+# TWRP
+ifeq ($(WITH_TWRP),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
+endif
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
