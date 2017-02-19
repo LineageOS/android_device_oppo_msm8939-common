@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa5d592f_769af515",
+        "filename": "Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-02-19T15:41:42Z",
+      "side": 1,
+      "message": "This isn\u0027t needed for prima, plus we already copy the right NV from device trees",
+      "revId": "2e3fd64fb3785c6c25bd6223cb403cfa86638f18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa5d592f_569ff103",
+        "filename": "Android.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2017-02-19T15:41:42Z",
+      "side": 1,
+      "message": "Looks like this is only used for some factory mode judging by the prima code",
+      "revId": "2e3fd64fb3785c6c25bd6223cb403cfa86638f18",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
