@@ -1,4 +1,4 @@
-/* Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2013-2016, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -30,12 +30,7 @@
 #define ULP_PROXY_BASE_H
 
 #include <gps_extended.h>
-#ifndef OSS_BUILD
 #include "fused_location_extended.h"
-#else
-struct FlpExtLocation;
-struct FlpExtBatchOptions;
-#endif
 
 namespace loc_core {
 
@@ -69,7 +64,7 @@ public:
         (void)loc_technology_mask;
         return false;
     }
-    inline virtual bool reportSv(HaxxSvStatus &svStatus,
+    inline virtual bool reportSv(GnssSvStatus &svStatus,
                                  GpsLocationExtended &locationExtended,
                                  void* svExt) {
         (void)svStatus;
