@@ -51,8 +51,6 @@ else
     fi
 fi
 
-"$CM_ROOT"/device/qcom/common/extractors/extract-files.sh "$SRC" msm8916 graphics
-
 # Initialize the helper for common device
 setup_vendor "$DEVICE_COMMON-$BITS" "$VENDOR" "$CM_ROOT" true
 

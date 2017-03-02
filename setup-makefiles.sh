@@ -49,13 +49,6 @@ fi
 
 write_makefiles "$MY_DIR"/proprietary-files-$BITS.txt
 
-if [ "$BITS" == "32" ]; then
-    printf '\n%s\n' "\$(call inherit-product, vendor/qcom/binaries/msm8916-32/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
-else
-    printf '\n%s' "\$(call inherit-product, vendor/qcom/binaries/msm8916-32/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
-    printf '\n%s\n' "\$(call inherit-product, vendor/qcom/binaries/msm8916-64/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
-fi
-
 write_footers
 
 # Reinitialize the helper for device
