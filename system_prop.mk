@@ -1,5 +1,5 @@
 #
-# System Properties for Oppo MSM8939
+# System Properties for OPPO MSM8939
 #
 
 # Bluetooth

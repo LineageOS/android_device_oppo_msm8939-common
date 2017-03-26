@@ -18,7 +18,7 @@ BOARD_VENDOR := oppo
 
 COMMON_PATH := device/oppo/msm8939-common
 
-# inherit from Oppo common
+# inherit from OPPO common
 -include device/oppo/common/BoardConfigCommon.mk
 
 # Platform

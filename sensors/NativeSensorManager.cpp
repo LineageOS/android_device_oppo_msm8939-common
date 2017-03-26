@@ -1253,7 +1253,7 @@ int NativeSensorManager::initCalibrate(const SensorContext *list)
 		if (!mCalibrationData.accelCalibOk) {
 		    return 0;
 		}
-		// Oppo's data was generated against a scaling of 1024/G, while the kernel
+		// OPPO's data was generated against a scaling of 1024/G, while the kernel
 		// driver now operates at 16384/G, so we need to scale up that data
 		cal_result.offset_x = 16 * (int16_t) ntohs(mCalibrationData.accelOffset_be16[0]);
 		cal_result.offset_y = 16 * (int16_t) ntohs(mCalibrationData.accelOffset_be16[1]);

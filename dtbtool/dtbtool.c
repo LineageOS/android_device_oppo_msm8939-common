@@ -969,7 +969,7 @@ int main(int argc, char **argv)
          platform
          subtype (v2/v3 only)
          soc rev
-         Oppo ID (v2/v3 only)
+         OPPO ID (v2/v3 only)
          pmic model0 (v3 only)
          pmic model1 (v3 only)
          pmic model2 (v3 only)
