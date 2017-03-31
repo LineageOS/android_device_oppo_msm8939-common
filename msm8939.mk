@@ -65,7 +65,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    init.qcom.bt.sh
+    init.qcom.bt.sh \
+    libbt-vendor
 
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl
