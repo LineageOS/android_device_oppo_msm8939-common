@@ -198,9 +198,9 @@ PRODUCT_COPY_FILES += \
 
 # Call the proprietary setup
 ifeq ($(FORCE_32_BIT),true)
-$(call inherit-product-if-exists, vendor/oppo/msm8939-common-32/msm8939-common-32-vendor.mk)
+$(call inherit-product, vendor/oppo/msm8939-common-32/msm8939-common-32-vendor.mk)
 else
-$(call inherit-product-if-exists, vendor/oppo/msm8939-common-64/msm8939-common-64-vendor.mk)
+$(call inherit-product, vendor/oppo/msm8939-common-64/msm8939-common-64-vendor.mk)
 endif
 
 # Inherit from oppo-common
