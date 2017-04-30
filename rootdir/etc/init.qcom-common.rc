@@ -44,8 +44,6 @@ on init
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
-    export LD_SHIM_LIBS "/system/bin/mm-qcamera-daemon|libshim_camera.so:/system/lib/hw/camera.vendor.msm8916.so|libshim_camera.so:/system/vendor/lib/libmmqjpeg_codec.so|libboringssl-compat.so"
-
 on fs
     mount_all fstab.qcom
     mkdir /persist/data 0700 system system
@@ -324,10 +322,11 @@ service irsc_util /system/bin/irsc_util "/etc/sec_config"
     user root
     oneshot
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /system/bin/strace -o /cache/modem.txt /system/bin/rmt_storage
     class core
     user root
     disabled
+    group wakelock
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.boot.emmc=true
