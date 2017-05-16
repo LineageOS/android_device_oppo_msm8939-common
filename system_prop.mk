@@ -20,11 +20,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bluetooth.pbap=true
 
 # Display
-#
-# OpenGLES:
-# 196609 is decimal for 0x30001 to report major/minor versions as 3/1
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609 \
+    ro.opengles.version=196610 \
     persist.hwc.mdpcomp.enable=true \
     debug.composition.type=c2d \
     debug.sf.gpu_comp_tiling=1 \
