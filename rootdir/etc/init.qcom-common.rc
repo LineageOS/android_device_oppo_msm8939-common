@@ -63,6 +63,10 @@ on post-fs-data
     mkdir /data/misc/dts 0770 media audio
     mkdir /data/misc/fp 0700 system system
 
+    mkdir /data/vendor/ramdump 0771 root system
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
