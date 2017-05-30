@@ -1,2 +1,0 @@
-allow bluetooth_loader nv_data_file:dir { search };
-allow bluetooth_loader nv_data_file:file rw_file_perms;
