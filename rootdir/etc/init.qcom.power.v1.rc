@@ -14,6 +14,7 @@ on enable-low-power
 
     write /sys/class/devfreq/cpubw/governor "bw_hwmon"
     write /sys/class/devfreq/cpubw/bw_hwmon/io_percent 20
+    write /sys/class/devfreq/gpubw/governor "bw_hwmon"
     write /sys/class/devfreq/gpubw/bw_hwmon/io_percent 40
     write /sys/class/devfreq/mincpubw/governor "cpufreq"
 
@@ -73,6 +74,9 @@ on enable-low-power
 
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
+
+    # Set idle GPU to 220 Mhz
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 3
 
     # HMP scheduler (big.Little cluster related) settings
     write /proc/sys/kernel/sched_upmigrate 75
