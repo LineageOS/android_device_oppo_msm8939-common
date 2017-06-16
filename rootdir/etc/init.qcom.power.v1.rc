@@ -74,6 +74,9 @@ on enable-low-power
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+    # Set idle GPU to 220 Mhz
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 3
+
     # HMP scheduler (big.Little cluster related) settings
     write /proc/sys/kernel/sched_upmigrate 75
     write /proc/sys/kernel/sched_downmigrate 60

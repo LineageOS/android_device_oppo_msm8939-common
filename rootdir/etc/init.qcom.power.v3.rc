@@ -95,6 +95,9 @@ on enable-low-power
     # Enable low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
+    # Set idle GPU to 220 Mhz
+    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 3
+
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 0
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
