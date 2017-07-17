@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "66ed425d_8410db6b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8328
+      },
+      "writtenOn": "2017-07-17T11:29:17Z",
+      "side": 1,
+      "message": "you are typing faster than your peripherals allow :)",
+      "range": {
+        "startLine": 7,
+        "startChar": 3,
+        "endLine": 7,
+        "endChar": 6
+      },
+      "revId": "de9fe1491a80ed2cfe7a9b1c1ae2fdaf2e9e42ba",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
