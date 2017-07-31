@@ -17,7 +17,7 @@
 
 set -e
 
-# Load extractutils and do some sanity checks
+# Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
@@ -35,31 +35,37 @@ if [ -z "$BITS" ]; then
     exit 1
 fi
 
-if [ $# -eq 0 ]; then
+# default to not sanitizing the vendor folder before extraction
+clean_vendor=false
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -p | --path )           shift
+                                SRC=$1
+                                ;;
+        -s | --section )        shift
+                                SECTION=$1
+                                clean_vendor=false
+                                ;;
+        -c | --clean-vendor )   clean_vendor=true
+                                ;;
+    esac
+    shift
+done
+
+if [ -z "$SRC" ]; then
     SRC=adb
-else
-    if [ $# -eq 1 ]; then
-        SRC=$1
-    else
-        echo "$0: bad number of arguments"
-        echo ""
-        echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
-        echo ""
-        echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
-        echo "the device using adb pull."
-        exit 1
-    fi
 fi
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON-$BITS" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$DEVICE_COMMON-$BITS" "$VENDOR" "$CM_ROOT" true $clean_vendor
 
-extract "$MY_DIR"/proprietary-files-$BITS.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-$BITS.txt "$SRC" "$SECTION"
 
 # Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false $clean_vendor
 
-extract "$MY_DIR"/device-proprietary-files-$BITS.txt "$SRC"
-extract "$MY_DIR"/../$DEVICE/device-proprietary-files.txt "$SRC"
+extract "$MY_DIR"/device-proprietary-files-$BITS.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/../$DEVICE/device-proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh

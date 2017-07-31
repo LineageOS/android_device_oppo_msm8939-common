@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,7 +18,7 @@
 
 set -e
 
-export INITIAL_COPYRIGHT_YEAR=2015
+INITIAL_COPYRIGHT_YEAR=2015
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -60,4 +61,5 @@ write_headers
 write_makefiles "$MY_DIR"/device-proprietary-files-$BITS.txt
 write_makefiles "$MY_DIR"/../$DEVICE/device-proprietary-files.txt
 
+# Finish
 write_footers
