@@ -146,6 +146,11 @@ include device/qcom/sepolicy/legacy-sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# Shim
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib64/libizat_core.so|libshims_get_process_name.so \
+    /system/vendor/lib/libizat_core.so|libshims_get_process_name.so
+
 # Touchscreen
 TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
