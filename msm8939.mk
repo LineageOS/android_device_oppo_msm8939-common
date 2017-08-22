@@ -181,6 +181,10 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     sensors.msm8916
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \
