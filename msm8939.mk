@@ -107,6 +107,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8916
 
+PRODUCT_PACKAGES += \
+    android.hardware.gnss@1.0-impl
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
     $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
