@@ -41,6 +41,9 @@ af.fast_track_multiplier=1
 # Low latency audio buffer size in frames
 audio_hal.period_size=192
 
+# Media
+persist.media.treble_omx=false
+
 # RIL
 ro.telephony.call_ring.multiple=false
 persist.radio.force_on_dc=true
