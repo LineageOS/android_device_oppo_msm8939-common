@@ -140,6 +140,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lights.msm8916
 
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-impl
+
 # Media configuration
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
