@@ -84,6 +84,10 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     Snap
 
+PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@1.0-impl
+
 # Charger
 WITH_CM_CHARGER := false
 PRODUCT_PACKAGES += \
