@@ -194,6 +194,9 @@ PRODUCT_PACKAGES += \
     calmodule.cfg \
     sensors.msm8916
 
+PRODUCT_PACKAGES += \
+    android.hardware.sensors@1.0-impl
+
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
