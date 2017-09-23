@@ -43,7 +43,7 @@ setup_vendor "$DEVICE_COMMON-$BITS" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and common guards
 if [ "$BITS" == "32" ]; then
-    write_headers "r5 r7"
+    write_headers "r1c r5 r7"
 else
     write_headers "f1f r7plus r7sf"
 fi
