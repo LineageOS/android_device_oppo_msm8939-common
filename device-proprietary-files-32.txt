@@ -71,8 +71,6 @@ vendor/lib/libssd.so
 
 # Media
 lib/libOmxVdecHevc.so
-vendor/lib/libI420colorconvert.so
-vendor/lib/libmm-color-convertor.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
