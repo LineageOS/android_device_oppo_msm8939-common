@@ -69,7 +69,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    init.qcom.bt.sh \
     libbt-vendor
 
 PRODUCT_PACKAGES += \
