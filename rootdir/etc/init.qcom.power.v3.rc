@@ -1,5 +1,7 @@
 # Qualcomm Power Management script for msm8939 rev3
 
+import init.recovery.twrp.rc
+
 on enable-low-power
     write /proc/sys/kernel/sched_boost 1
 
