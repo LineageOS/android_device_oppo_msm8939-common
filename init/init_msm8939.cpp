@@ -41,7 +41,14 @@
 #include "log.h"
 #include "util.h"
 
+#include "init_msm8939.h"
+
 using android::base::Trim;
+
+__attribute__ ((weak))
+void init_target_properties()
+{
+}
 
 static void init_alarm_boot_properties()
 {
@@ -78,5 +85,6 @@ static void init_alarm_boot_properties()
 
 void vendor_load_properties()
 {
+    init_target_properties();
     init_alarm_boot_properties();
 }
