@@ -19,6 +19,18 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
+    camera_parameters/CameraParameters.cpp
+
+LOCAL_MODULE := libshims_camera_parameters
+LOCAL_MODULE_TAGS := optional
+
+LOCAL_32_BIT_ONLY := true
+
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := \
     flp/flp.c
 
 LOCAL_MODULE := libshims_flp
