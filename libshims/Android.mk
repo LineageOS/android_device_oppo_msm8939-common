@@ -23,6 +23,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libshims_camera_parameters
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 LOCAL_32_BIT_ONLY := true
 
@@ -35,6 +36,7 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libshims_flp
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
 
@@ -45,5 +47,6 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libshims_get_process_name
 LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
 
 include $(BUILD_SHARED_LIBRARY)
