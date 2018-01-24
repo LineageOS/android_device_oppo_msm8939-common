@@ -54,9 +54,6 @@ TARGET_NO_BOOTLOADER := true
 # CM Hardware
 BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
 
-# Cpusets
-ENABLE_CPUSETS := true
-
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := console=none androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
