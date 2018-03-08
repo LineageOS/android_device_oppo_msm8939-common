@@ -40,6 +40,7 @@ ro.core_ctl_max_cpu=4
 # RIL
 ro.telephony.call_ring.multiple=false
 persist.data.qmi.adb_logmask=0
+persist.radio.add_power_save=1
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.force_on_dc=true
 persist.radio.sib16_support=1
