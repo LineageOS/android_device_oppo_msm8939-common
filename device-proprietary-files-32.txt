@@ -14,6 +14,7 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 
 # Bluetooth
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|84d10f2b9801165b7c6a5b0600162362d58ce7d3
 vendor/lib/libbtnv.so
 
 # Camera
