@@ -1,6 +1,6 @@
 # GPS - from kipper
--lib64/libloc_api_v02.so|bdd3a92246d9a6a42b928201835f2d767cde1eff
--lib64/libloc_ds_api.so|e06cd5c399bf64d8f28d45ccd18b65c612b76625
+-lib64/libloc_api_v02.so:vendor/lib64/libloc_api_v02.so|bdd3a92246d9a6a42b928201835f2d767cde1eff
+-lib64/libloc_ds_api.so:vendor/lib64/libloc_ds_api.so|e06cd5c399bf64d8f28d45ccd18b65c612b76625
 vendor/lib64/hw/flp.default.so|03784211a3d7c144c0bc6f86b50d1cc5eb97f8c5
 vendor/lib64/libflp.so|33793c405cf39858854c8023dec4b4e0d9d79ff0
 vendor/lib64/libgeofence.so|23cb999eb444971170ff60873392706cf003ed23
@@ -62,8 +62,8 @@ vendor/lib/libsc-a3xx.so|a03fc9f0c929cb4adf013f8a463cfbef68d48090
 vendor/lib/libscale.so|972cbd87794b4ce0a5c23db946acbafd4cd6d073
 
 # Graphics firmware - from kipper
-etc/firmware/a420_pfp.fw|ceb61d9f1385b3f2956d72f33e0bd43cb12f72f0
-etc/firmware/a420_pm4.fw|d8ca599bd61cc85fec0b39c11ccd046d863ba7b3
+etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw|ceb61d9f1385b3f2956d72f33e0bd43cb12f72f0
+etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw|d8ca599bd61cc85fec0b39c11ccd046d863ba7b3
 
 # Widevine - from kipper
 vendor/lib/libwvdrm_L3.so|7e77482481197997294a834bfbc817a01b6075cd
