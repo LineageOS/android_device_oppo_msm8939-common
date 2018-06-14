@@ -5,7 +5,7 @@
 # Sensors
 /sys/oppo_ftm/als_prox/.*                                       u:object_r:sensor_calib_file:s0
 /sys/oppo_ftm/accel/cali                                        u:object_r:sensor_calib_file:s0
-/system/bin/psensord                                            u:object_r:sensor_init_exec:s0
+/(vendor|system/vendor)/bin/psensord                            u:object_r:sensor_init_exec:s0
 
 # NV
 /data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0

@@ -320,12 +320,12 @@ on property:vold.decrypt=trigger_restart_framework
 on property:persist.env.fastdorm.enabled=true
     setprop persist.radio.data_no_toggle 1
 
-service irsc_util /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class main
     user root
     oneshot
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -358,13 +358,13 @@ on property:bluetooth.hciattach=false
     setprop bluetooth.status off
 
     # QMUX must be in multiple groups to support external process connections
-service qmuxd /system/bin/qmuxd
+service qmuxd /system/vendor/bin/qmuxd
     class main
     user root
     group radio audio bluetooth gps oem_2950
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
     group root wifi wakelock radio inet
@@ -401,7 +401,7 @@ on property:ro.data.large_tcp_window_size=true
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
     # start camera server as daemon
-service qcamerasvr /system/bin/mm-qcamera-daemon
+service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
@@ -422,7 +422,7 @@ service charger /charger
 on charger
     write /sys/class/leds/lcd-backlight/brightness 100
 
-service qseecomd /system/bin/qseecomd
+service qseecomd /system/vendor/bin/qseecomd
     class core
     user root
     group root
@@ -444,13 +444,13 @@ service thermal-engine /system/vendor/bin/thermal-engine
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service time_daemon /system/bin/time_daemon
+service time_daemon /system/vendor/bin/time_daemon
     class late_start
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service ppd /system/bin/mm-pp-daemon
+service ppd /system/vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -469,7 +469,7 @@ service wcnss-service /system/vendor/bin/wcnss_service
     group system wifi radio
     oneshot
 
-service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+service msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
