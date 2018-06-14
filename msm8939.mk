@@ -56,8 +56,7 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinymix
+    libqcomvoiceprocessing
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -95,7 +94,6 @@ PRODUCT_PACKAGES += \
     camera.device@1.0-impl
 
 # Charger
-WITH_CM_CHARGER := false
 PRODUCT_PACKAGES += \
     charger_res_images
 
