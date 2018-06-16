@@ -1,16 +1,22 @@
 # Camera
-/data/cam_socket.*                                              u:object_r:camera_socket:s0
-/sys/devices/soc\.0/78b6000\.i2c/i2c-0/0-0029/enable_ps_sensor  u:object_r:cam_sysfs:s0
+/data/cam_socket.*                                                        u:object_r:camera_socket:s0
+/sys/devices/soc\.0/78b6000\.i2c/i2c-0/0-0029/enable_ps_sensor            u:object_r:cam_sysfs:s0
 
 # Sensors
-/sys/oppo_ftm/als_prox/.*                                       u:object_r:sensor_calib_file:s0
-/sys/oppo_ftm/accel/cali                                        u:object_r:sensor_calib_file:s0
-/(vendor|system/vendor)/bin/psensord                            u:object_r:sensor_init_exec:s0
+/sys/oppo_ftm/als_prox/.*                                                 u:object_r:sensor_calib_file:s0
+/sys/oppo_ftm/accel/cali                                                  u:object_r:sensor_calib_file:s0
+/(vendor|system/vendor)/bin/psensord                                      u:object_r:sensor_init_exec:s0
+
+# Lights
+/sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/leds(/.*)?   u:object_r:sysfs_leds:s0
+/sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/blink        u:object_r:sysfs_leds:s0
+/sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grpfreq      u:object_r:sysfs_leds:s0
+/sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grppwm       u:object_r:sysfs_leds:s0
 
 # NV
-/data/opponvitems(/.*)?                                         u:object_r:nv_data_file:s0
-/dev/block/bootdevice/by-name/oppodycnvbk                       u:object_r:modem_efs_partition_device:s0
-/dev/block/bootdevice/by-name/oppostanvbk                       u:object_r:modem_efs_partition_device:s0
+/data/opponvitems(/.*)?                                                   u:object_r:nv_data_file:s0
+/dev/block/bootdevice/by-name/oppodycnvbk                                 u:object_r:modem_efs_partition_device:s0
+/dev/block/bootdevice/by-name/oppostanvbk                                 u:object_r:modem_efs_partition_device:s0
 
 # Persist
-/dev/block/platform/soc\.0/7824900\.sdhci/by-name/persist       u:object_r:persist_block_device:s0
+/dev/block/platform/soc\.0/7824900\.sdhci/by-name/persist                 u:object_r:persist_block_device:s0
