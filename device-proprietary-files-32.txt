@@ -74,7 +74,7 @@ vendor/lib/libOmxQcelp13Dec.so
 
 # Perf
 bin/msm_irqbalance:vendor/bin/msm_irqbalance
-bin/perfd:vendor/bin/perfd
+vendor/bin/perfd|5e31de336247378b0674b4d65494567ab76c190c
 vendor/lib/libqti-perfd-client.so
 
 # Postprocessing
