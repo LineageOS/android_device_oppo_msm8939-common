@@ -15,8 +15,12 @@
 
 # NV
 /data/opponvitems(/.*)?                                                   u:object_r:nv_data_file:s0
+/cache/opponvitems(/.*)?                                                  u:object_r:nv_data_file:s0
+/dev/block/mmcblk0p19                                                     u:object_r:modem_efs_partition_device:s0
+/dev/block/mmcblk0p20                                                     u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/oppodycnvbk                                 u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/oppostanvbk                                 u:object_r:modem_efs_partition_device:s0
+/sys/devices/soc.0/85f00000.qcom,opponvbk_sharedmem/uio/uio3(/.*)?        u:object_r:modem_smem_uio_file:s0
 
 # Persist
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/persist                 u:object_r:persist_block_device:s0
