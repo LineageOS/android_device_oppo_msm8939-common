@@ -1,5 +1,5 @@
 genfscon proc /qcom_flash             u:object_r:cam_proc:s0
 genfscon proc /laser_info             u:object_r:cam_proc:s0
 genfscon proc /touchpanel             u:object_r:proc_touchpanel:s0
-genfscon proc /oppoVersion/prjVersion u:object_r:oppo_ver_proc:s0
+genfscon proc /oppoVersion            u:object_r:oppo_ver_proc:s0
 genfscon proc /devinfo                u:object_r:oppo_devinfo_proc:s0
