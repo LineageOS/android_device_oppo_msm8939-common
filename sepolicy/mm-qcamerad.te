@@ -4,6 +4,7 @@ allow mm-qcamerad persist_file:file { read open };
 allow mm-qcamerad persist_file:dir { search };
 allow mm-qcamerad cam_proc:file { open read write };
 allow mm-qcamerad cam_sysfs:file { open read write };
+allow mm-qcamerad oppo_ver_proc:dir search;
 allow mm-qcamerad oppo_ver_proc:file r_file_perms;
 allow mm-qcamerad oppo_devinfo_proc:dir search;
 allow mm-qcamerad oppo_devinfo_proc:file r_file_perms;
