@@ -1,1 +1,0 @@
-allow audioserver oppo_ver_proc:file r_file_perms;
