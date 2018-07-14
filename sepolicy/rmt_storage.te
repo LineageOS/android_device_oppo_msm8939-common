@@ -1,4 +1,7 @@
 # Our rmt storage bridges the ssd partition too
 allow rmt_storage ssd_device:blk_file rw_file_perms;
+
+allow rmt_storage oppo_ver_proc:dir search;
 allow rmt_storage oppo_ver_proc:file r_file_perms;
+
 allow rmt_storage self:capability net_raw;

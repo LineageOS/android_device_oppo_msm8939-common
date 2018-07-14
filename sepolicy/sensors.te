@@ -5,5 +5,8 @@ init_daemon_domain(sensor_init);
 
 allow sensor_init nv_data_file:dir { search };
 allow sensor_init nv_data_file:file r_file_perms;
+
 allow sensor_init sensor_calib_file:file rw_file_perms;
+
+allow sensor_init oppo_ver_proc:dir search;
 allow sensor_init oppo_ver_proc:file r_file_perms;
