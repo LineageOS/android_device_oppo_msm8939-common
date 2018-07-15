@@ -32,9 +32,6 @@ sys.hwc.gpu_perf_mode=1
 # DRM
 drm.service.enabled=true
 
-# Media
-persist.media.treble_omx=false
-
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.core_ctl_min_cpu=0
