@@ -62,8 +62,6 @@ CompassSensor::CompassSensor(struct SensorContext *context)
 	  mEnabledTime(0),
 	  res(CONVERT_MAG)
 {
-	int handle = -1;
-
 	res = context->sensor->resolution;
 
 	memset(mPendingEvent.data, 0, sizeof(mPendingEvent.data));
