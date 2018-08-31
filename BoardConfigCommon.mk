@@ -83,6 +83,9 @@ QCOM_BT_USE_BTNV := true
 # Camera
 BOARD_GLOBAL_CFLAGS += -DCAMERA_VENDOR_L_COMPAT
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
+	/system/bin/mediaserver=23 \
+	/system/vendor/bin/mm-qcamera-daemon=23
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
