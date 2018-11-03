@@ -166,7 +166,7 @@ on boot
     chown system system /sys/oppo_ftm/als_prox/ps_min
 
     # Touchscreen
-    chown system radio /proc/touchpanel/double_tap_enable
+    chown system system /proc/touchpanel/double_tap_enable
     chmod 0660 /proc/touchpanel/double_tap_enable
 
 service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
