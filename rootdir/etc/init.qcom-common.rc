@@ -256,7 +256,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 service charger /charger
     class charger
     critical
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 # start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
