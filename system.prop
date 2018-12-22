@@ -35,6 +35,9 @@ sys.hwc.gpu_perf_mode=1
 # DRM
 drm.service.enabled=true
 
+# Memory optimizations
+ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.core_ctl_min_cpu=0
