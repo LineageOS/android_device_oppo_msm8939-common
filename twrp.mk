@@ -16,4 +16,5 @@
 
 TARGET_RECOVERY_DEVICE_DIRS += device/oppo/msm8939-common/twrp
 TW_INCLUDE_CRYPTO := true
+TW_CRYPTO_USE_SBIN_VOLD := true
 TW_INPUT_BLACKLIST := "lis3dh-accel\x0ahbtp_vm"
