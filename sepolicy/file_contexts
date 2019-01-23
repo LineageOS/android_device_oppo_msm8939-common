@@ -22,8 +22,3 @@
 
 # Persist
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/persist                                u:object_r:persist_block_device:s0
-
-# Power supply
-/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-f0-9]+/power_supply/battery(/.*)?	u:object_r:sysfs_battery_supply:s0
-/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.i2c/i2c-[0-9]+/[0-9]+-[a-f0-9]+/power_supply/qpnp-dc(/.*)?	u:object_r:sysfs_usb_supply:s0
-/sys/devices(/platform)?/soc\.0/[a-f0-9]+\.usb/power_supply/usb(/.*)?					u:object_r:sysfs_usb_supply:s0
