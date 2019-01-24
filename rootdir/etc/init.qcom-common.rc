@@ -41,18 +41,50 @@ on fs
     restorecon_recursive /persist
 
 on post-fs-data
+    # Create folder for mm-qcamera-daemon
+    mkdir /data/misc/camera 0770 camera camera
+
+    # Create directory used by display clients
+    mkdir /data/misc/display 0770 system graphics
+
+    # Create PERFD deamon related dirs
+    mkdir /data/misc/perfd 2755 root system
+    mkdir /data/system/perfd 2770 root system
+
+    # Create directories for Location services
+    mkdir /data/misc/location 0770 gps gps
+    mkdir /data/misc/location/mq 0770 gps gps
+    mkdir /data/misc/location/xtwifi 0770 gps gps
+
+    # Create the directories used by the Wireless subsystem
+    mkdir /data/vendor/wifi 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
+    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
+
+    # Create /data/time folder for time-services
+    mkdir /data/time 0700 system system
+
+    # Tombstones
     mkdir /data/tombstones/modem 0771 system system
     mkdir /data/tombstones/lpass 0771 system system
     mkdir /data/tombstones/wcnss 0771 system system
     mkdir /data/tombstones/dsps 0771 system system
 
+    # OPPO NV items
+    mkdir /data/opponvitems 0771 radio radio
+
+    setprop vold.post_fs_data_done 1
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
-    # SSR Setup
+    # Subsystem Restart
+    # Venus
     write /sys/bus/msm_subsys/devices/subsys0/restart_level "related"
+    # WCNSS
     write /sys/bus/msm_subsys/devices/subsys1/restart_level "related"
+    # Modem
     write /sys/bus/msm_subsys/devices/subsys2/restart_level "related"
 
     write /sys/kernel/boot_adsp/boot 1
@@ -70,7 +102,9 @@ on boot
     mkdir /dev/socket/qmux_bluetooth 2770 bluetooth bluetooth
     mkdir /dev/socket/qmux_gps 2770 gps gps
 
+    # Create persist folders
     mkdir /persist/alarm 0770 system system
+    mkdir /persist/display 0770 system graphics
 
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
@@ -98,36 +132,27 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-on post-fs-data
-    # Create folder for mm-qcamera-daemon
-    mkdir /data/misc/camera 0770 camera camera
+    # Permissions required for power HAL
+    chown system system /sys/devices/system/cpu/cpu0/core_ctl/max_cpus
 
-    # Create directory used by display clients
-    mkdir /data/misc/display 0770 system graphics
-    mkdir /persist/display 0770 system graphics
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
-    # Create directories for Location services
-    mkdir /data/misc/location 0770 gps gps
-    mkdir /data/misc/location/mq 0770 gps gps
-    mkdir /data/misc/location/xtwifi 0770 gps gps
+    # Graphics node permissions
+    chown system graphics /sys/class/graphics/fb0/dyn_pu
+    chmod 0664 /sys/class/graphics/fb0/dyn_pu
+    chown system graphics /sys/class/graphics/fb0/dynamic_fps
+    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
+    chown system graphics /sys/class/graphics/fb0/idle_time
+    chmod 0664 /sys/class/graphics/fb0/idle_time
+    chown system graphics /sys/class/graphics/fb0/mode
+    chmod 0664 /sys/class/graphics/fb0/mode
+    chown system graphics /sys/class/graphics/fb0/modes
+    chmod 0664 /sys/class/graphics/fb0/modes
+    chown system graphics /sys/class/graphics/fb0/srgb
+    chmod 0664 /sys/class/graphics/fb0/srgb
 
-    # Create the directories used by the Wireless subsystem
-    mkdir /data/vendor/wifi 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa 0770 wifi wifi
-    mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
-
-    # Create /data/time folder for time-services
-    mkdir /data/time 0700 system system
-
-    setprop vold.post_fs_data_done 1
-
-    # Create PERFD deamon related dirs
-    mkdir /data/misc/perfd 2755 root system
-    mkdir /data/system/perfd 2770 root system
-    rm /data/system/perfd/default_values
-
-    mkdir /data/opponvitems 0771 radio radio
-
+    # Sensors calibration
     chown system system /sys/oppo_ftm/accel/cali
     chown system system /sys/oppo_ftm/als_prox/calibration
     chown system system /sys/oppo_ftm/als_prox/name
@@ -139,9 +164,6 @@ on post-fs-data
     chown system system /sys/oppo_ftm/als_prox/algo_wakeup
     chown system system /sys/oppo_ftm/als_prox/algo_info
     chown system system /sys/oppo_ftm/als_prox/ps_min
-
-    # Permissions required for power HAL
-    chown system system /sys/devices/system/cpu/cpu0/core_ctl/max_cpus
 
     # Touchscreen
     chown system radio /proc/touchpanel/double_tap_enable
@@ -170,23 +192,6 @@ on post-fs-data
     chmod 0660 /proc/touchpanel/letter_o_enable
     chown system radio /proc/touchpanel/letter_w_enable
     chmod 0660 /proc/touchpanel/letter_w_enable
-
-    # Graphics node permissions
-    chown system graphics /sys/class/graphics/fb0/dyn_pu
-    chmod 0664 /sys/class/graphics/fb0/dyn_pu
-    chown system graphics /sys/class/graphics/fb0/dynamic_fps
-    chmod 0664 /sys/class/graphics/fb0/dynamic_fps
-    chown system graphics /sys/class/graphics/fb0/idle_time
-    chmod 0664 /sys/class/graphics/fb0/idle_time
-    chown system graphics /sys/class/graphics/fb0/mode
-    chmod 0664 /sys/class/graphics/fb0/mode
-    chown system graphics /sys/class/graphics/fb0/modes
-    chmod 0664 /sys/class/graphics/fb0/modes
-    chown system graphics /sys/class/graphics/fb0/srgb
-    chmod 0664 /sys/class/graphics/fb0/srgb
-
-    # Wifi firmware reload path
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 service irsc_util /system/vendor/bin/irsc_util "/system/vendor/etc/sec_config"
     class main
@@ -221,6 +226,12 @@ service qmuxd /system/vendor/bin/qmuxd
     group radio audio bluetooth gps oem_2950
     writepid /dev/cpuset/system-background/tasks
 
+service msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+    class core
+    user root
+    group root
+    writepid /dev/cpuset/system-background/tasks
+
 service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
@@ -242,6 +253,11 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
+service charger /charger
+    class charger
+    critical
+    seclabel u:r:charger:s0
+
 # start camera server as daemon
 service qcamerasvr /system/vendor/bin/mm-qcamera-daemon
     class main
@@ -254,14 +270,6 @@ on property:init.svc.media=restarting
 
 on property:init.svc.servicemanager=restarting
     restart qcamerasvr
-
-service charger /charger
-    class charger
-    critical
-    seclabel u:r:charger:s0
-
-on charger
-    write /sys/class/leds/lcd-backlight/brightness 100
 
 service qseecomd /system/vendor/bin/qseecomd
     class core
@@ -309,9 +317,3 @@ service wcnss-service /system/vendor/bin/wcnss_service
     user system
     group system wifi radio
     oneshot
-
-service msm_irqbalance /system/vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
-    class core
-    user root
-    group root
-    writepid /dev/cpuset/system-background/tasks
