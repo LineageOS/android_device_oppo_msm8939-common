@@ -12,6 +12,7 @@
 /sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/blink                       u:object_r:sysfs_leds:s0
 /sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grpfreq                     u:object_r:sysfs_leds:s0
 /sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grppwm                      u:object_r:sysfs_leds:s0
+/(vendor|system/vendor)/bin/hw/android.hardware.light@2\.0-service.oppo_msm8939          u:object_r:hal_light_default_exec:s0
 
 # NV
 /data/opponvitems(/.*)?                                                                  u:object_r:nv_data_file:s0
