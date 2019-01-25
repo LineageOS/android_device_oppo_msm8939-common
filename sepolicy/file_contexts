@@ -13,6 +13,10 @@
 /sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grpfreq                     u:object_r:sysfs_leds:s0
 /sys/devices/soc\.0/[a-z0-9]+\.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/grppwm                      u:object_r:sysfs_leds:s0
 
+# LiveDisplay
+/sys/class/graphics/fb0/hbm                                                              u:object_r:livedisplay_sysfs:s0
+/sys/class/graphics/fb0/rgb                                                              u:object_r:livedisplay_sysfs:s0
+
 # NV
 /data/opponvitems(/.*)?                                                                  u:object_r:nv_data_file:s0
 /cache/opponvitems(/.*)?                                                                 u:object_r:nv_data_file:s0
@@ -22,3 +26,7 @@
 
 # Persist
 /dev/block/platform/soc\.0/7824900\.sdhci/by-name/persist                                u:object_r:persist_block_device:s0
+
+# HALs
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service.oppo_msm8939    u:object_r:hal_livedisplay_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.touch@1\.0-service.oppo_msm8939          u:object_r:hal_lineage_touch_default_exec:s0
