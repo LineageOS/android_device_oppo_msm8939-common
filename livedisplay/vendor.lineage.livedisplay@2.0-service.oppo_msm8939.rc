@@ -1,0 +1,4 @@
+service livedisplay-hal-2-0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.oppo_msm8939
+    class hal
+    user system
+    group system
