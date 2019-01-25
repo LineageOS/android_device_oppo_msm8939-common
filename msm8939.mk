@@ -221,6 +221,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.oppo_msm8939
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
