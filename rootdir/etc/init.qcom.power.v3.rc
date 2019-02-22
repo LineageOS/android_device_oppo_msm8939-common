@@ -127,6 +127,8 @@ on enable-low-power
     setprop ro.min_freq_0 960000
     setprop ro.min_freq_4 800000
 
+    setprop vendor.post_boot.parsed 1
+
     rm /data/system/perfd/default_values
     start perfd
 
