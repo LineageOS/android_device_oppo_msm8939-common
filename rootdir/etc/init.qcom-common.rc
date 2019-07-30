@@ -231,7 +231,8 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
 
 service charger /system/bin/charger
     class charger
-    group system graphics
+    user system
+    group system graphics input
     critical
     seclabel u:r:charger:s0
 
