@@ -144,6 +144,9 @@ ifeq ($(WITH_TWRP),true)
 -include $(COMMON_PATH)/twrp.mk
 endif
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := firmware persist
+
 # SELinux
 include device/qcom/sepolicy-legacy/sepolicy.mk
 
