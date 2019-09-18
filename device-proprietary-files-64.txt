@@ -133,7 +133,7 @@ vendor/lib/libsmemlog.so
 bin/netmgrd:vendor/bin/netmgrd
 bin/qmuxd:vendor/bin/qmuxd
 bin/radish:vendor/bin/radish
-bin/rmt_storage:vendor/bin/rmt_storage
+bin/rmt_storage:vendor/bin/rmt_storage|976b00c61ba1630adffeffebc1b59e064d1142c6
 etc/data/dsi_config.xml:vendor/etc/data/dsi_config.xml
 etc/data/netmgr_config.xml:vendor/etc/data/netmgr_config.xml
 etc/data/qmi_config.xml:vendor/etc/data/qmi_config.xml
