@@ -18,9 +18,6 @@ BOARD_VENDOR := oppo
 
 COMMON_PATH := device/oppo/msm8939-common
 
-# inherit from OPPO common
--include device/oppo/common/BoardConfigCommon.mk
-
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
 
@@ -143,6 +140,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ifeq ($(WITH_TWRP),true)
 -include $(COMMON_PATH)/twrp.mk
 endif
+
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_oppo
+TARGET_RELEASETOOLS_EXTENSIONS := device/oppo/common
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist
