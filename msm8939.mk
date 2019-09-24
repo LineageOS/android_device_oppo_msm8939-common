@@ -203,6 +203,10 @@ PRODUCT_PACKAGES += \
     init.recovery.qcom.rc \
     ueventd.qcom.rc
 
+# Recovery
+PRODUCT_PACKAGES += \
+    librecovery_updater_oppo
+
 # RenderScript HAL
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
@@ -271,5 +275,3 @@ else
 $(call inherit-product, vendor/oppo/msm8939-common-64/msm8939-common-64-vendor.mk)
 endif
 
-# Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
