@@ -1,3 +1,10 @@
 allow mediaserver sensorservice_service:service_manager find;
+allow mediaserver sensor_privacy_service:service_manager find;
 binder_call(mediaserver, servicemanager);
 binder_call(mediaserver, sensorservice_service);
+binder_call(mediaserver, sensor_privacy_service);
+
+allow mediaserver cameraproxy_service:service_manager find;
+allow mediaserver cameraserver_service:service_manager add;
+allow mediaserver hal_camera_hwservice:hwservice_manager find;
+allow mediaserver fwk_camera_hwservice:hwservice_manager add;
